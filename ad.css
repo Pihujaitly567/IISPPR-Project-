@@ -31,3 +31,51 @@
     font-weight:bold;
     border-radius:4px;
 }
+
+/* =========================
+   Tablet (768px and below)
+========================= */
+@media (max-width: 768px) {
+    .ad-section{
+        padding:60px 6%;
+    }
+
+    .ad-content h2{
+        font-size:2rem;
+    }
+
+    .ad-content p{
+        font-size:1rem;
+        line-height:1.6;
+    }
+
+    .ad-btn{
+        padding:12px 26px;
+        font-size:0.95rem;
+    }
+}
+
+/* =========================
+   Mobile (480px and below)
+========================= */
+@media (max-width: 480px) {
+    .ad-section{
+        padding:40px 5%;
+    }
+
+    .ad-content h2{
+        font-size:1.6rem;
+    }
+
+    .ad-content p{
+        font-size:0.95rem;
+        line-height:1.5;
+    }
+
+    .ad-btn{
+        padding:10px 22px;
+        font-size:0.9rem;
+        width:100%;
+        max-width:260px;
+    }
+}
