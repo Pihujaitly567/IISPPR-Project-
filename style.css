@@ -37,9 +37,10 @@ body {
     background-position: center left 20%; /* Position temple beautifully */
     background-repeat: no-repeat;
     z-index: 1;
+    filter: contrast(1.08) brightness(1.03) saturate(1.04); /* Subtle boost to column definition and sky warmth */
 }
 
-/* Atmospheric Multi-stage Blend: Smoothly merges dark navy into the architecture */
+/* Atmospheric Multi-stage Blend: Softened middle stops to allow details to shine through */
 .hero-image::after {
     content: '';
     position: absolute;
@@ -50,10 +51,10 @@ body {
     background: linear-gradient(
         to right,
         rgba(2, 7, 16, 1) 0%,
-        rgba(2, 7, 16, 0.98) 15%,
-        rgba(2, 7, 16, 0.85) 30%,
-        rgba(2, 7, 16, 0.5) 50%,
-        rgba(2, 7, 16, 0.15) 75%,
+        rgba(2, 7, 16, 0.96) 15%,
+        rgba(2, 7, 16, 0.78) 32%,  /* Softened from 0.85 to reveal more temple details */
+        rgba(2, 7, 16, 0.42) 50%,  /* Softened from 0.50 for smoother middle transition */
+        rgba(2, 7, 16, 0.12) 75%,  /* Softened from 0.15 */
         rgba(2, 7, 16, 0) 100%
     );
 }
