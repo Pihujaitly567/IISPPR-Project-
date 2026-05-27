@@ -50,11 +50,11 @@ body {
     height: 100%;
     background: linear-gradient(
         to right,
-        #020710 0%,           /* Solid navy on the far left behind text */
-        rgba(2, 7, 16, 0.95) 20%,
-        rgba(2, 7, 16, 0.7) 40%,  /* Perfectly smooth fade-out */
-        rgba(2, 7, 16, 0.3) 65%,
-        rgba(2, 7, 16, 0) 90%    /* Leaves the temple fully visible and crisp */
+        rgba(2, 7, 16, 0.92) 0%,     /* Reduced from solid 1.0 color to let warm background tones bleed through subtly */
+        rgba(2, 7, 16, 0.82) 20%,    /* Lightened opacity for a smoky, luminous atmosphere */
+        rgba(2, 7, 16, 0.58) 40%,    /* Softened to brighten the center-left area */
+        rgba(2, 7, 16, 0.24) 65%,
+        rgba(2, 7, 16, 0) 90%        /* Perfectly clean fade-out */
     );
 }
 
