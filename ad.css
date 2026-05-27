@@ -30,6 +30,7 @@
     text-decoration:none;
     font-weight:bold;
     border-radius:4px;
+    margin-bottom:12px; /* ✅ ADDED SPACE BETWEEN BUTTONS */
 }
 
 /* =========================
@@ -52,6 +53,7 @@
     .ad-btn{
         padding:12px 26px;
         font-size:0.95rem;
+        margin-bottom:10px; /* optional tighter spacing on tablet */
     }
 }
 
@@ -77,5 +79,6 @@
         font-size:0.9rem;
         width:100%;
         max-width:260px;
+        margin-bottom:10px; /* consistent spacing */
     }
 }
