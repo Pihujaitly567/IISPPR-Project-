@@ -25,23 +25,8 @@ body {
     background-color: #020710; /* Clean, deep navy base */
 }
 
-/* One Unified Background Layer: Full screen image placed behind everything */
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/hero_temple.png');
-    background-size: cover;
-    background-position: center right; /* Naturally place temple on the right */
-    background-repeat: no-repeat;
-    z-index: 0;
-    filter: contrast(1.06) brightness(1.02); /* Maintain crisp warm detail */
-}
-
-/* ONE Smooth, feather-soft blend: No boxes, panels, or rectangular splits */
-.hero-image::after {
+/* Layered cinematic blend placed on the parent container so it is completely unaffected by the image's CSS filter */
+.hero-container::after {
     content: '';
     position: absolute;
     top: 0;
@@ -50,12 +35,29 @@ body {
     height: 100%;
     background: linear-gradient(
         to right,
-        rgba(2, 7, 16, 1) 0%,         /* Restored full solid dark color on the left for maximum text contrast */
-        rgba(2, 7, 16, 0.94) 22%,     /* Smooth, dark transition stop */
-        rgba(2, 7, 16, 0.74) 44%,     /* Darkened slightly to reintroduce elegant, clean separation */
-        rgba(2, 7, 16, 0.28) 70%,
-        rgba(2, 7, 16, 0) 95%         /* Clean fade-out onto the temple columns */
+        rgba(2, 7, 16, 1) 0%,           /* Matches the solid navy background perfectly on the left */
+        rgba(2, 7, 16, 1) 35%,          /* Keep it completely solid dark navy behind the text */
+        rgba(2, 7, 16, 0.85) 50%,        /* Seamless, highly feathered shift begins */
+        rgba(2, 7, 16, 0.30) 75%,        /* Gentle atmospheric middle blend */
+        rgba(2, 7, 16, 0) 100%           /* Fully blends into the bright temple image on the right */
     );
+    z-index: 1; /* Sits on top of the image but below the text (z-index 10) */
+    pointer-events: none;
+}
+
+/* One Unified Background Layer: Pushed to the right half so the image emerges from the navy base */
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Restricts the image to the right, leaving the left side purely solid navy */
+    height: 100%;
+    background-image: url('images/hero_temple.png');
+    background-size: cover;
+    background-position: center; /* Center the architecture inside its section */
+    background-repeat: no-repeat;
+    z-index: 0;
+    filter: contrast(1.05) brightness(1.05); /* Turned brightness down from 1.18 to 1.05 to restore focus to text/buttons */
 }
 
 /* =========================
@@ -68,14 +70,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 80px;
-    background: rgba(2, 7, 16, 0.4);
-    backdrop-filter: blur(5px);
+    padding: 40px 100px 20px;
+    background: transparent;
 }
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0px;
     cursor: pointer;
 }
@@ -108,32 +109,58 @@ body {
 }
 
 .nav-links a {
+    position: relative; /* Required for absolute positioning of pseudo-element */
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 14px; /* Slightly increased to 14px to stand out elegantly */
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px; /* Premium letter spacing */
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* Positions the underline slightly below the link text */
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background-color: #e5c158; /* Rich brand gold */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%); /* Keeps expansion centered */
 }
 
 .nav-links a:hover {
     color: #e5c158;
 }
 
+.nav-links a:hover::after {
+    width: 100%; /* Expands the line outwards from the center */
+}
+
 .btn {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 14px; /* Aligned to 14px */
     font-weight: 600;
     letter-spacing: 1.5px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
+    background-size: 200% 100%; /* Allows smooth sliding gradient transition */
+    background-position: left center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-position: right center; /* Slides the gold gradient smoothly */
+    box-shadow: 0 8px 24px rgba(229, 193, 88, 0.35); /* Premium soft gold glow */
 }
 
 .btn-nav {
     color: #020710;
-    background: #e5c158;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
     border: none;
     padding: 12px 30px;
     display: inline-flex;
@@ -142,12 +169,11 @@ body {
 }
 
 .btn-nav:hover {
-    background: #f0d175;
     color: #020710;
 }
 
 .arrow {
-    font-size: 12px;
+    font-size: 13px; /* Aligned with text size */
     font-weight: 700;
 }
 
@@ -170,7 +196,7 @@ body {
 
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 86px; /* Increased from 78px for a bolder visual presence */
+    font-size: 88px; /* Slightly increased for stronger visual presence */
     font-weight: 400;
     line-height: 1.02; /* Tightened from 1.05 to group the words elegantly */
     margin-bottom: 25px;
@@ -186,19 +212,19 @@ body {
 }
 
 .hero-divider {
-    width: 50px;
+    width: 420px; /* Lengthened to 420px to perfectly reach the end of 'w' in 'Tomorrow.' */
     height: 1.5px;
     background: #e5c158;
     margin-bottom: 30px;
 }
 
 .hero-subtitle {
-    font-size: 15px;
+    font-size: 17px; /* Increased from 15px for much better readability */
     font-weight: 300;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85); /* Slightly brighter off-white */
     margin-bottom: 40px;
-    max-width: 440px;
+    max-width: 460px; /* Adjusted container width */
     letter-spacing: 0.5px;
 }
 
@@ -207,17 +233,17 @@ body {
     align-items: center;
     gap: 8px;
     color: #020710;
-    background: #e5c158;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
     border: none;
     padding: 15px 36px;
-    font-size: 11px;
+    font-size: 13px; /* Increased from 11px to match overall scale */
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .btn-hero:hover {
-    background: #f0d175;
     color: #020710;
 }
 
