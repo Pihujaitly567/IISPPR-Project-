@@ -50,11 +50,11 @@ body {
     height: 100%;
     background: linear-gradient(
         to right,
-        rgba(2, 7, 16, 0.92) 0%,     /* Reduced from solid 1.0 color to let warm background tones bleed through subtly */
-        rgba(2, 7, 16, 0.82) 20%,    /* Lightened opacity for a smoky, luminous atmosphere */
-        rgba(2, 7, 16, 0.58) 40%,    /* Softened to brighten the center-left area */
-        rgba(2, 7, 16, 0.24) 65%,
-        rgba(2, 7, 16, 0) 90%        /* Perfectly clean fade-out */
+        rgba(2, 7, 16, 1) 0%,         /* Restored full solid dark color on the left for maximum text contrast */
+        rgba(2, 7, 16, 0.94) 22%,     /* Smooth, dark transition stop */
+        rgba(2, 7, 16, 0.74) 44%,     /* Darkened slightly to reintroduce elegant, clean separation */
+        rgba(2, 7, 16, 0.28) 70%,
+        rgba(2, 7, 16, 0) 95%         /* Clean fade-out onto the temple columns */
     );
 }
 
