@@ -40,7 +40,7 @@ body {
     filter: contrast(1.08) brightness(1.03) saturate(1.04); /* Subtle boost to column definition and sky warmth */
 }
 
-/* Atmospheric Multi-stage Blend: Softened middle stops to allow details to shine through */
+/* Atmospheric Multi-stage Blend: Angled at 105deg for organic cloud shapes, using feathered multi-stops to erase any visible edges */
 .hero-image::after {
     content: '';
     position: absolute;
@@ -49,12 +49,12 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(
-        to right,
+        105deg,
         rgba(2, 7, 16, 1) 0%,
-        rgba(2, 7, 16, 0.96) 15%,
-        rgba(2, 7, 16, 0.78) 32%,  /* Softened from 0.85 to reveal more temple details */
-        rgba(2, 7, 16, 0.42) 50%,  /* Softened from 0.50 for smoother middle transition */
-        rgba(2, 7, 16, 0.12) 75%,  /* Softened from 0.15 */
+        rgba(2, 7, 16, 0.94) 25%,
+        rgba(2, 7, 16, 0.72) 42%,
+        rgba(2, 7, 16, 0.35) 60%,
+        rgba(2, 7, 16, 0.1) 80%,
         rgba(2, 7, 16, 0) 100%
     );
 }
