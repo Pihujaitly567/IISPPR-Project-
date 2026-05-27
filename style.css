@@ -25,22 +25,21 @@ body {
     background: #020710;
 }
 
-/* Dual Panel: Split layout to ensure clear separation */
+/* Integrated Cinematic Background: Image spans most of the container */
 .hero-image {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%; /* Image occupies exactly the right half */
+    width: 70%; /* Expanded to 70% width to bring temple closer to center */
     height: 100%;
     background-image: url('images/hero_temple.png');
     background-size: cover;
-    background-position: center left; /* Center the temple building inside its half */
+    background-position: center left 20%; /* Position temple beautifully */
     background-repeat: no-repeat;
     z-index: 1;
-    opacity: 1; /* Fully clear and bright */
 }
 
-/* Subtle soft fade on the left edge of the right-hand image panel only */
+/* Atmospheric Multi-stage Blend: Smoothly merges dark navy into the architecture */
 .hero-image::after {
     content: '';
     position: absolute;
@@ -51,9 +50,31 @@ body {
     background: linear-gradient(
         to right,
         rgba(2, 7, 16, 1) 0%,
-        rgba(2, 7, 16, 0.5) 15%,
-        rgba(2, 7, 16, 0) 40%
+        rgba(2, 7, 16, 0.98) 15%,
+        rgba(2, 7, 16, 0.85) 30%,
+        rgba(2, 7, 16, 0.5) 50%,
+        rgba(2, 7, 16, 0.15) 75%,
+        rgba(2, 7, 16, 0) 100%
     );
+}
+
+/* Soft atmospheric sunset diffusion glow behind the text section */
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(
+        circle,
+        rgba(229, 193, 88, 0.08) 0%,
+        rgba(229, 193, 88, 0.03) 40%,
+        rgba(2, 7, 16, 0) 70%
+    );
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(80px);
 }
 
 /* =========================
@@ -159,11 +180,11 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 60px 80px 100px;
+    padding: 60px 100px 100px; /* Shifted left padding slightly inward to connect with blend */
 }
 
 .hero-text-area {
-    max-width: 480px; /* Constrain text block size to ensure perfect spacing */
+    max-width: 500px; /* Slightly wider to let lines balance elegantly into the glow transition */
 }
 
 .hero-title {
