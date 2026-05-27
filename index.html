@@ -1,54 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Luxury Footer</title>
-
-    <!-- GOOGLE FONTS -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entablature</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- REMIX ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <!-- ===================== HERO SECTION ===================== -->
+    <div class="hero-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-e">E</div>
+                <div class="logo-text">NTABLATURE</div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">INSIGHTS</a></li>
+                <li><a href="#">PUBLICATIONS</a></li>
+                <li><a href="#">INITIATIVES</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            
+            <a href="#" class="btn btn-nav">JOIN US <span class="arrow">&gt;</span></a>
+        </nav>
 
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-text-area">
+                <h1 class="hero-title">
+                    <span class="text-white">Building</span><br>
+                    <span class="text-gold">Thought.</span><br>
+                    <span class="text-white">Shaping</span><br>
+                    <span class="text-gold">Tomorrow.</span>
+                </h1>
+                
+                <div class="hero-divider"></div>
+                
+                <p class="hero-subtitle">
+                    Entablature is a platform for rigorous ideas, meaningful dialogue and enduring impact on public life and policy.
+                </p>
+                
+                <a href="#" class="btn btn-hero">EXPLORE OUR WORK <span class="arrow">&gt;</span></a>
+            </div>
+        </div>
+        
+        <!-- Hero Background Image -->
+        <div class="hero-image"></div>
+    </div>
 
-
-    
+    <!-- ===================== FOOTER ===================== -->
     <footer>
       <div class="footer-container">
         <!-- FIRST SECTION -->
-
         <div class="footer-section logo-section">
           <div class="logo-wrapper">
-            <img
-              src="https://play-lh.googleusercontent.com/IH1yKsOGNhqysO_5VYkYZ-sTqvWkPiRde5tsihxZXlr6eD2Jo3Jp14CALBFveySKrK1eZ3OL02O_Y0ZxQmQu=w240-h480-rw"
-            />
-
-            <div class="logo-text">
+            <img src="https://play-lh.googleusercontent.com/IH1yKsOGNhqysO_5VYkYZ-sTqvWkPiRde5tsihxZXlr6eD2Jo3Jp14CALBFveySKrK1eZ3OL02O_Y0ZxQmQu=w240-h480-rw" />
+            <div class="logo-text-footer">
               <h2>ENTABLATURE</h2>
-
               <p>Ideas. Structure. Civilization.</p>
             </div>
           </div>
-
           <!-- ICONS -->
-
           <div class="social-icons">
             <i class="ri-linkedin-fill"></i>
             <i class="ri-twitter-x-line"></i>
@@ -57,10 +80,8 @@
         </div>
 
         <!-- SECOND -->
-
         <div class="footer-section">
           <h3>EXPLORE</h3>
-
           <a href="#">About</a>
           <a href="#">Insights</a>
           <a href="#">Publications</a>
@@ -68,10 +89,8 @@
         </div>
 
         <!-- THIRD -->
-
         <div class="footer-section">
           <h3>RESOURCES</h3>
-
           <a href="#">Articles</a>
           <a href="#">Reports</a>
           <a href="#">Events</a>
@@ -79,21 +98,17 @@
         </div>
 
         <!-- FOURTH -->
-
         <div class="footer-section stay-section">
           <h3>STAY CONNECTED</h3>
-
           <p>Subscribe to our newsletter for the latest insights.</p>
-
           <div class="input-box">
             <input type="email" placeholder="Your email address" />
-
-            <button>
-              <i class="ri-arrow-right-line"></i>
-            </button>
+            <button><i class="ri-arrow-right-line"></i></button>
           </div>
         </div>
       </div>
     </footer>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
