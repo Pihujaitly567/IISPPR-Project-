@@ -33,9 +33,10 @@ body {
     height: 100%;
     background-image: url('images/hero_temple.png');
     background-size: cover;
-    background-position: center right;
+    background-position: center right 10%; /* Shifted more to the right */
     background-repeat: no-repeat;
     z-index: 0;
+    opacity: 0.85; /* Slightly softened the image transparency */
 }
 
 .hero-image::after {
@@ -47,11 +48,12 @@ body {
     height: 100%;
     background: linear-gradient(
         to right,
-        rgba(2, 7, 16, 0.98) 0%,
-        rgba(2, 7, 16, 0.95) 20%,
-        rgba(2, 7, 16, 0.85) 35%,
-        rgba(2, 7, 16, 0.4) 60%,
-        rgba(2, 7, 16, 0.1) 100%
+        rgba(2, 7, 16, 1) 0%,
+        rgba(2, 7, 16, 0.98) 25%,
+        rgba(2, 7, 16, 0.85) 45%,
+        rgba(2, 7, 16, 0.5) 65%,
+        rgba(2, 7, 16, 0.15) 85%,
+        rgba(2, 7, 16, 0.05) 100%
     );
 }
 
