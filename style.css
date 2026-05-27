@@ -22,25 +22,25 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: #020710;
+    background-color: #020710; /* Clean, deep navy base */
 }
 
-/* Integrated Cinematic Background: Image spans most of the container */
+/* One Unified Background Layer: Full screen image placed behind everything */
 .hero-image {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 70%; /* Expanded to 70% width to bring temple closer to center */
+    left: 0;
+    width: 100%;
     height: 100%;
     background-image: url('images/hero_temple.png');
     background-size: cover;
-    background-position: center left 20%; /* Position temple beautifully */
+    background-position: center right; /* Naturally place temple on the right */
     background-repeat: no-repeat;
-    z-index: 1;
-    filter: contrast(1.08) brightness(1.03) saturate(1.04); /* Subtle boost to column definition and sky warmth */
+    z-index: 0;
+    filter: contrast(1.06) brightness(1.02); /* Maintain crisp warm detail */
 }
 
-/* Atmospheric Multi-stage Blend: Angled at 105deg for organic cloud shapes, using feathered multi-stops to erase any visible edges */
+/* ONE Smooth, feather-soft blend: No boxes, panels, or rectangular splits */
 .hero-image::after {
     content: '';
     position: absolute;
@@ -49,33 +49,13 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(
-        105deg,
-        rgba(2, 7, 16, 1) 0%,
-        rgba(2, 7, 16, 0.94) 25%,
-        rgba(2, 7, 16, 0.72) 42%,
-        rgba(2, 7, 16, 0.35) 60%,
-        rgba(2, 7, 16, 0.1) 80%,
-        rgba(2, 7, 16, 0) 100%
+        to right,
+        #020710 0%,           /* Solid navy on the far left behind text */
+        rgba(2, 7, 16, 0.95) 20%,
+        rgba(2, 7, 16, 0.7) 40%,  /* Perfectly smooth fade-out */
+        rgba(2, 7, 16, 0.3) 65%,
+        rgba(2, 7, 16, 0) 90%    /* Leaves the temple fully visible and crisp */
     );
-}
-
-/* Soft atmospheric sunset diffusion glow behind the text section */
-.hero-container::before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 50vw;
-    height: 50vh;
-    background: radial-gradient(
-        circle,
-        rgba(229, 193, 88, 0.08) 0%,
-        rgba(229, 193, 88, 0.03) 40%,
-        rgba(2, 7, 16, 0) 70%
-    );
-    z-index: 2;
-    pointer-events: none;
-    filter: blur(80px);
 }
 
 /* =========================
