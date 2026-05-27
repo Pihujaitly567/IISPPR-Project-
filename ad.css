@@ -1,0 +1,33 @@
+.ad-section{
+    background:#0D1B3D;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.ad-content{
+    max-width:700px;
+    margin:auto;
+}
+
+.ad-content h2{
+    color:#FFC857;
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.ad-content p{
+    color:#FAF8F2;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.ad-btn{
+    display:inline-block;
+    background:#FFC857;
+    color:#0D1B3D;
+    padding:14px 32px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:4px;
+}
