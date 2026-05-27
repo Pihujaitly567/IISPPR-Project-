@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #080c14;
+    background: #020710;
     color: white;
     min-height: 100vh;
 }
@@ -31,9 +31,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/hero_architecture.png');
+    background-image: url('images/hero_temple.png');
     background-size: cover;
-    background-position: center;
+    background-position: center right;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -47,11 +47,11 @@ body {
     height: 100%;
     background: linear-gradient(
         to right,
-        rgba(8, 12, 20, 0.97) 0%,
-        rgba(8, 12, 20, 0.92) 25%,
-        rgba(8, 12, 20, 0.65) 45%,
-        rgba(8, 12, 20, 0.15) 70%,
-        rgba(8, 12, 20, 0.05) 100%
+        rgba(2, 7, 16, 0.98) 0%,
+        rgba(2, 7, 16, 0.95) 20%,
+        rgba(2, 7, 16, 0.85) 35%,
+        rgba(2, 7, 16, 0.4) 60%,
+        rgba(2, 7, 16, 0.1) 100%
     );
 }
 
@@ -65,77 +65,87 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px 50px;
+    padding: 30px 80px;
+    background: rgba(2, 7, 16, 0.4);
+    backdrop-filter: blur(5px);
 }
 
 .logo {
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    align-items: center;
+    gap: 0px;
+    cursor: pointer;
 }
 
 .logo-e {
-    display: none; /* unified logo — no separate E */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: #e5c158;
+    line-height: 0.9;
+    border-top: 1.5px solid #e5c158;
+    padding-top: 2px;
 }
 
 .logo-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 400;
-    color: #f0ede6;
+    color: #ffffff;
     letter-spacing: 5px;
-    text-transform: uppercase;
-    border-top: 1px solid rgba(201, 168, 76, 0.8);
-    padding-top: 5px;
+    line-height: 0.9;
+    padding-top: 2px;
+    display: inline-block;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 35px;
 }
 
 .nav-links a {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #C9A84C;
+    color: #e5c158;
 }
 
 .btn {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .btn-nav {
-    color: #0d0f1a;
-    background: #C9A84C;
-    border: 1px solid #C9A84C;
-    padding: 10px 26px;
-    font-weight: 600;
+    color: #020710;
+    background: #e5c158;
+    border: none;
+    padding: 12px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-nav:hover {
-    background: #e0bc5a;
-    border-color: #e0bc5a;
-    color: #0d0f1a;
+    background: #f0d175;
+    color: #020710;
 }
 
 .arrow {
-    margin-left: 6px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 /* =========================
@@ -148,61 +158,64 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 60px 60px 100px;
+    padding: 60px 80px 100px;
 }
 
 .hero-text-area {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 88px;
-    font-weight: 600;
-    line-height: 1.0;
-    margin-bottom: 32px;
-    letter-spacing: -0.5px;
+    font-size: 78px;
+    font-weight: 400;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
 }
 
 .text-white {
-    color: #f5f5f5;
+    color: #ffffff;
 }
 
 .text-gold {
-    color: #C9A84C;
+    color: #e5c158;
 }
 
 .hero-divider {
-    width: 45px;
-    height: 2px;
-    background: #C9A84C;
-    margin-bottom: 24px;
+    width: 50px;
+    height: 1.5px;
+    background: #e5c158;
+    margin-bottom: 30px;
 }
 
 .hero-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
-    line-height: 1.9;
-    color: rgba(255, 255, 255, 0.65);
-    margin-bottom: 38px;
-    max-width: 320px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    max-width: 440px;
+    letter-spacing: 0.5px;
 }
 
 .btn-hero {
-    display: inline-block;
-    color: #0d0f1a;
-    background: #C9A84C;
-    border: 1px solid #C9A84C;
-    padding: 14px 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #020710;
+    background: #e5c158;
+    border: none;
+    padding: 15px 36px;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .btn-hero:hover {
-    background: #e0bc5a;
-    border-color: #e0bc5a;
-    color: #0d0f1a;
+    background: #f0d175;
+    color: #020710;
 }
 
 /* =========================
