@@ -119,53 +119,95 @@
     transition: transform 0.3s ease;
   }
   
-  /* Floating Dropdown Drawer with Glassmorphism */
+  /* Prevent scrolling when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  /* Float navbar on top when menu is open */
+  body.menu-open .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    padding: 20px 30px;
+  }
+
+  /* Full Screen Overlay Drawer */
   .nav-links {
     display: flex !important; /* Retain layout for transitions */
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 30px;
-    right: 29px;
-    background: rgba(7, 16, 39, 0.96);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 200, 87, 0.15);
-    border-radius: 12px;
-    padding: 24px 0;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* FIXED positioning to overlay whole display */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #020710; /* Completely opaque deep navy to hide text behind */
+    padding: 80px 0 40px; /* Push content down to avoid overlapping floating logo/close icon */
+    gap: 32px;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(100%); /* Elegant slide in from right */
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1000;
+    z-index: 9999;
     list-style: none;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
   }
   
   .nav-links.open {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     pointer-events: auto;
   }
   
   .nav-links a {
     display: block;
-    padding: 8px 24px;
-    font-size: 14px;
-    letter-spacing: 2px;
+    padding: 10px 40px;
+    font-size: 20px; /* Enhanced for full-screen appearance */
+    letter-spacing: 4px; /* Premium letter spacing */
     text-align: center;
     text-decoration: none;
     color: #ffffff;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
   }
   
   .nav-links a:hover {
     color: #e5c158;
+    transform: scale(1.06); /* Premium micro-animation scale */
   }
   
   .nav-links a::after {
     display: none; /* Hide hover underline effect on mobile */
+  }
+  
+  .mobile-close-li {
+    display: block !important;
+    margin-top: 20px;
+  }
+  .mobile-close-btn {
+    color: #e5c158 !important; /* Standout gold */
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px !important;
+    border: 1px solid rgba(229, 193, 88, 0.4) !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    background: rgba(229, 193, 88, 0.05) !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-close-btn:hover {
+    background: rgba(229, 193, 88, 0.15) !important;
+    transform: scale(1.05) !important;
   }
   
   .btn-nav {
@@ -322,48 +364,93 @@
     z-index: 1100;
   }
   
-  /* Floating Dropdown Drawer with Glassmorphism for Mobile */
+  /* Prevent scrolling when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Float navbar on top when menu is open */
+  body.menu-open .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    padding: 16px 18px;
+  }
+
+  /* Full Screen Overlay Drawer for Mobile */
   .nav-links {
     display: flex !important;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 18px;
-    right: 18px;
-    background: rgba(7, 16, 39, 0.98);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 200, 87, 0.12);
-    border-radius: 10px;
-    padding: 20px 0;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #020710; /* Completely solid deep navy */
+    padding: 80px 0 40px;
+    gap: 28px;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(100%); /* Slide in from right */
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1000;
+    z-index: 9999;
     list-style: none;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
   }
   
   .nav-links.open {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     pointer-events: auto;
   }
   
   .nav-links a {
     display: block;
-    padding: 6px 0;
-    font-size: 13px;
-    letter-spacing: 2px;
+    padding: 8px 30px;
+    font-size: 18px; /* Readable mobile full-screen text */
+    letter-spacing: 3px;
     text-align: center;
     text-decoration: none;
     color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #e5c158;
+    transform: scale(1.06);
   }
   
   .nav-links a::after {
     display: none; /* Avoid underline hover mechanics on mobile */
+  }
+  
+  .mobile-close-li {
+    display: block !important;
+    margin-top: 15px;
+  }
+  .mobile-close-btn {
+    color: #e5c158 !important; /* Standout gold */
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px !important;
+    border: 1px solid rgba(229, 193, 88, 0.4) !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    background: rgba(229, 193, 88, 0.05) !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-close-btn:hover {
+    background: rgba(229, 193, 88, 0.15) !important;
+    transform: scale(1.05) !important;
   }
   
   .btn-nav {

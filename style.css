@@ -112,6 +112,10 @@ body {
     gap: 35px;
 }
 
+.mobile-close-li {
+    display: none;
+}
+
 .nav-links a {
     position: relative; /* Required for absolute positioning of pseudo-element */
     font-family: 'Inter', sans-serif;

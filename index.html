@@ -90,6 +90,7 @@
                 <li><a href="#">PUBLICATIONS</a></li>
                 <li><a href="#">INITIATIVES</a></li>
                 <li><a href="#">CONTACT</a></li>
+                <li class="mobile-close-li"><a href="#" class="mobile-close-btn"><i class="ri-arrow-left-line"></i> BACK TO SITE</a></li>
             </ul>
             
             <a href="#" class="btn btn-nav">JOIN US <span class="arrow">&gt;</span></a>
@@ -282,6 +283,7 @@
             menuBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 navLinks.classList.toggle('open');
+                document.body.classList.toggle('menu-open');
                 
                 // Toggle between Hamburger and Close icons
                 if (navLinks.classList.contains('open')) {
@@ -297,17 +299,21 @@
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('open');
+                    document.body.classList.remove('menu-open');
                     menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
                     menuBtn.style.transform = 'rotate(0deg)';
                 });
             });
 
-            // Close menu drawer if clicking outside
+            // Close menu drawer if clicking outside or clicking the background overlay
             document.addEventListener('click', (e) => {
-                if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-                    navLinks.classList.remove('open');
-                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
-                    menuBtn.style.transform = 'rotate(0deg)';
+                if (navLinks.classList.contains('open')) {
+                    if (e.target === navLinks || (!navLinks.contains(e.target) && !menuBtn.contains(e.target))) {
+                        navLinks.classList.remove('open');
+                        document.body.classList.remove('menu-open');
+                        menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                        menuBtn.style.transform = 'rotate(0deg)';
+                    }
                 }
             });
         }
