@@ -11,7 +11,7 @@
     <!-- REMIX ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -79,7 +79,11 @@
                 <span class="logo-e">E</span><span class="logo-text">NTABLATURE</span>
             </div>
             
-            <ul class="nav-links">
+            <div class="menu-icon" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">INSIGHTS</a></li>
                 <li><a href="#">PUBLICATIONS</a></li>
@@ -267,19 +271,32 @@
     </div>
 
     <script>
+        // Navbar Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        if(menuBtn && navLinks) {
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Popup Logic
         const popupOverlay = document.getElementById('popupOverlay');
         const popupClose = document.getElementById('popupClose');
 
         function closePopup() {
-            popupOverlay.style.display = 'none';
+            if(popupOverlay) popupOverlay.style.display = 'none';
         }
 
-        popupClose.addEventListener('click', closePopup);
-        popupOverlay.addEventListener('click', (event) => {
-            if (event.target === popupOverlay) {
-                closePopup();
-            }
-        });
+        if(popupClose) popupClose.addEventListener('click', closePopup);
+        if(popupOverlay) {
+            popupOverlay.addEventListener('click', (event) => {
+                if (event.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+        }
     </script>
 
     <script src="script.js"></script>
