@@ -10,8 +10,8 @@
 
     <!-- REMIX ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="ad.css">
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -62,12 +62,13 @@
         }
         .feature-card:hover .card-arrow { transform: translateX(6px); }
 
-        /* Responsive */
-        @media (max-width: 1100px) { .features-grid.pillars { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .features-grid.pillars { grid-template-columns: 1fr; } }
+        /* Responsive handled by responsive.css — no overrides here */
     </style>
     <link rel="stylesheet" href="quote-section.css?v=3">
     <link rel="stylesheet" href="ad.css?v=3">
+
+    <!-- ✅ Responsive overrides — must come LAST -->
+    <link rel="stylesheet" href="responsive.css?v=1">
 </head>
 <body>
 
@@ -271,13 +272,43 @@
     </div>
 
     <script>
-        // Navbar Menu Toggle
+        // Navbar Menu Toggle & Interactive Micro-animations
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
 
         if (menuBtn && navLinks) {
-            menuBtn.addEventListener('click', () => {
+            const menuIcon = menuBtn.querySelector('i');
+            
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 navLinks.classList.toggle('open');
+                
+                // Toggle between Hamburger and Close icons
+                if (navLinks.classList.contains('open')) {
+                    menuIcon.classList.replace('ri-menu-line', 'ri-close-line');
+                    menuBtn.style.transform = 'rotate(90deg)';
+                } else {
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Auto-close menu drawer when a navigation link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                });
+            });
+
+            // Close menu drawer if clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                }
             });
         }
 
