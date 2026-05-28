@@ -58,14 +58,14 @@
     transform: scale(1.05);
 }
 
-.ad-section {
+.promo-section {
     padding: 96px 64px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.ad-section::before {
+.promo-section::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -73,7 +73,7 @@
     pointer-events: none;
 }
 
-.ad-content {
+.promo-content {
     position: relative;
     max-width: 760px;
     margin: 0 auto;
@@ -83,7 +83,7 @@
     box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
 }
 
-.ad-tag {
+.promo-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -95,7 +95,7 @@
     margin-bottom: 1.5rem;
 }
 
-.ad-content h2 {
+.promo-content h2 {
     color: var(--brand-gold);
     font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1.05;
@@ -104,7 +104,7 @@
     font-family: 'Cormorant Garamond', serif;
 }
 
-.ad-content p {
+.promo-content p {
     color: var(--brand-ivory);
     font-size: 1.12rem;
     line-height: 1.9;
@@ -112,14 +112,14 @@
     max-width: 760px;
 }
 
-.ad-buttons {
+.promo-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
 }
 
-.ad-btn {
+.promo-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -134,55 +134,55 @@
     transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
-.ad-btn.primary {
+.promo-btn.primary {
     background: var(--brand-gold);
     color: var(--brand-navy);
     box-shadow: 0 18px 36px rgba(255, 200, 87, 0.22);
 }
 
-.ad-btn.primary:hover,
-.ad-btn.primary:focus-visible {
+.promo-btn.primary:hover,
+.promo-btn.primary:focus-visible {
     transform: translateY(-1px);
     box-shadow: 0 22px 44px rgba(255, 200, 87, 0.28);
 }
 
-.ad-btn.secondary {
+.promo-btn.secondary {
     background: transparent;
     color: var(--brand-ivory);
     border-color: rgba(255, 200, 87, 0.6);
 }
 
-.ad-btn.secondary:hover,
-.ad-btn.secondary:focus-visible {
+.promo-btn.secondary:hover,
+.promo-btn.secondary:focus-visible {
     background: rgba(255, 200, 87, 0.08);
     border-color: var(--brand-gold);
     transform: translateY(-1px);
 }
 
 @media (max-width: 992px) {
-    .ad-section {
+    .promo-section {
         padding: 72px 8%;
     }
-    .ad-content {
+    .promo-content {
         padding: 44px 28px;
     }
 }
 
 @media (max-width: 768px) {
-    .ad-section {
+    .promo-section {
         padding: 56px 6%;
     }
-    .ad-content {
+    .promo-content {
         padding: 34px 24px;
     }
-    .ad-content h2 {
+    .promo-content h2 {
         font-size: 2.6rem;
     }
-    .ad-content p {
+    .promo-content p {
         font-size: 1rem;
         line-height: 1.75;
     }
-    .ad-btn {
+    .promo-btn {
         width: 100%;
         max-width: none;
         padding: 14px 24px;
@@ -190,17 +190,17 @@
 }
 
 @media (max-width: 480px) {
-    .ad-section {
+    .promo-section {
         padding: 36px 4%;
     }
-    .ad-content {
+    .promo-content {
         padding: 26px 18px;
         border-radius: 22px;
     }
-    .ad-content h2 {
+    .promo-content h2 {
         font-size: 2rem;
     }
-    .ad-content p {
+    .promo-content p {
         font-size: 0.95rem;
         line-height: 1.7;
     }
