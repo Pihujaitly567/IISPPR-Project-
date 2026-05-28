@@ -1,0 +1,222 @@
+/* Brand palette: royal navy, imperial gold, ivory white, stone grey, charcoal */
+
+:root {
+    --brand-navy: #0D1B3D;
+    --brand-gold: #FFC857;
+    --brand-ivory: #FAF8F2;
+    --brand-grey: #8A887F;
+    --brand-charcoal: #141A24;
+    --transition: 180ms ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0B1533 0%, #0F1F42 45%, #131F34 100%);
+    color: var(--brand-ivory);
+}
+
+body {
+    padding: 0;
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 16, 39, 0.88);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    padding: 24px;
+}
+
+.popup-card {
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    border-radius: 32px;
+    background: rgba(10, 17, 42, 0.98);
+    border: 1px solid rgba(255, 200, 87, 0.16);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(21, 34, 69, 0.9);
+    color: var(--brand-ivory);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.popup-close:hover,
+.popup-close:focus-visible {
+    background: rgba(255, 200, 87, 0.18);
+    transform: scale(1.05);
+}
+
+.ad-section {
+    padding: 96px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ad-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 200, 87, 0.12), transparent 38%);
+    pointer-events: none;
+}
+
+.ad-content {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 42px;
+    background: rgba(19, 27, 54, 0.96);
+    border-radius: 28px;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+.ad-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brand-gold);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.ad-content h2 {
+    color: var(--brand-gold);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.05;
+    margin: 0 0 1.4rem;
+    letter-spacing: -0.04em;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.ad-content p {
+    color: var(--brand-ivory);
+    font-size: 1.12rem;
+    line-height: 1.9;
+    margin: 0 0 2.4rem;
+    max-width: 760px;
+}
+
+.ad-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ad-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    padding: 16px 34px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.ad-btn.primary {
+    background: var(--brand-gold);
+    color: var(--brand-navy);
+    box-shadow: 0 18px 36px rgba(255, 200, 87, 0.22);
+}
+
+.ad-btn.primary:hover,
+.ad-btn.primary:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 44px rgba(255, 200, 87, 0.28);
+}
+
+.ad-btn.secondary {
+    background: transparent;
+    color: var(--brand-ivory);
+    border-color: rgba(255, 200, 87, 0.6);
+}
+
+.ad-btn.secondary:hover,
+.ad-btn.secondary:focus-visible {
+    background: rgba(255, 200, 87, 0.08);
+    border-color: var(--brand-gold);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+    .ad-section {
+        padding: 72px 8%;
+    }
+    .ad-content {
+        padding: 44px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-section {
+        padding: 56px 6%;
+    }
+    .ad-content {
+        padding: 34px 24px;
+    }
+    .ad-content h2 {
+        font-size: 2.6rem;
+    }
+    .ad-content p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+    .ad-btn {
+        width: 100%;
+        max-width: none;
+        padding: 14px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-section {
+        padding: 36px 4%;
+    }
+    .ad-content {
+        padding: 26px 18px;
+        border-radius: 22px;
+    }
+    .ad-content h2 {
+        font-size: 2rem;
+    }
+    .ad-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
