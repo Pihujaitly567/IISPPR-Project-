@@ -51,6 +51,6 @@ document.querySelectorAll(".feature-card").forEach((card)=>{
 
     card.addEventListener("mouseleave",()=>{
 
-        card.style.background="rgba(255,255,255,0.04)";
+        card.style.background="";
     });
 });

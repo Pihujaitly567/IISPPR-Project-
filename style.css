@@ -83,17 +83,17 @@ body {
 
 .logo-e {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
+    font-size: 44px;
     font-weight: 500;
     color: #e5c158;
     line-height: 0.9;
-    border-top: 1.5px solid #e5c158;
+    border-top: 2px solid #e5c158;
     padding-top: 2px;
 }
 
 .logo-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 400;
     color: #ffffff;
     letter-spacing: 5px;
@@ -257,7 +257,7 @@ footer {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(100px);
     border-top: 1.5px solid rgba(255, 200, 87, 0.7);
-    padding: 35px 7%;
+    padding: 70px 7%;
 }
 
 .footer-container {
