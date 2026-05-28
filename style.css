@@ -678,3 +678,41 @@ footer {
         max-width:100%;
     }
 }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 16px 20px;
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .hero-content {
+        padding: 30px 20px 60px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 26px;
+    }
+    .footer-section h3 {
+        font-size: 16px;
+    }
+    .footer-section ul li a {
+        font-size: 14px;
+    }
+}

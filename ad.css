@@ -162,26 +162,29 @@
 
 @media (max-width: 992px) {
     .promo-section {
-        padding: 72px 8%;
+        padding: 40px 24px;
     }
     .promo-content {
-        padding: 44px 28px;
+        padding: 32px 24px;
     }
 }
 
 @media (max-width: 768px) {
     .promo-section {
-        padding: 56px 6%;
+        padding: 32px 20px;
     }
     .promo-content {
-        padding: 34px 24px;
+        padding: 24px 20px;
     }
     .promo-content h2 {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
     .promo-content p {
-        font-size: 1rem;
-        line-height: 1.75;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .promo-buttons {
+        flex-direction: column;
     }
     .promo-btn {
         width: 100%;
@@ -192,17 +195,17 @@
 
 @media (max-width: 480px) {
     .promo-section {
-        padding: 36px 4%;
+        padding: 24px 16px;
     }
     .promo-content {
-        padding: 26px 18px;
-        border-radius: 22px;
+        padding: 20px 16px;
+        border-radius: 16px;
     }
     .promo-content h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     .promo-content p {
-        font-size: 0.95rem;
-        line-height: 1.7;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 }
