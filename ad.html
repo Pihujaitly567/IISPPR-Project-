@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisement Popup</title>
+
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="ad.css">
+</head>
+
+<body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+            <button class="popup-close" id="popupClose" aria-label="Close advertisement">×</button>
+            <section class="promo-section">
+                <div class="promo-content">
+                    <span class="promo-tag">FEATURED OPPORTUNITY</span>
+                    <h2 id="popupTitle">Join Our Internship Program</h2>
+                    <p>
+                        Work on real-world projects, collaborate with talented peers, and gain valuable industry experience in research, design, and technology.
+                    </p>
+                    <div class="promo-buttons">
+                        <a href="https://forms.gle/RZEPFkDtpKjEsxmv7" target="_blank" class="promo-btn primary">
+                            Apply Now
+                        </a>
+                        <a href="https://iisppracademy.com/" target="_blank" class="promo-btn secondary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+
+        function closePopup() {
+            popupOverlay.style.display = 'none';
+        }
+
+        popupClose.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', (event) => {
+            if (event.target === popupOverlay) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+
+</html>

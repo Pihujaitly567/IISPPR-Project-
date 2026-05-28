@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entablature</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- REMIX ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="ad.css">
+
+    <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
+    <style>
+        /* 4-column pillar grid */
+        .features-grid.pillars { grid-template-columns: repeat(4, 1fr); }
+
+        /* Compact card sizing */
+        .features-grid.pillars .feature-card {
+            min-height: 280px;
+            padding: 55px 42px;
+        }
+
+        /* Horizontal icon + title row */
+        .features-grid.pillars .feature-card .card-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .features-grid.pillars .feature-card .card-top i {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            font-size: 22px;
+            margin-bottom: 0;
+        }
+
+        .features-grid.pillars .feature-card .card-top h3 {
+            margin-bottom: 0;
+            font-size: 20px;
+        }
+
+        .features-grid.pillars .feature-card p {
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: #4D4D4D;
+            max-width: 100%;
+        }
+
+        /* Arrow styling */
+        .feature-card .card-arrow {
+            color: #D4A43C;
+            font-size: 20px;
+            margin-top: auto;
+            padding-top: 16px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover .card-arrow { transform: translateX(6px); }
+
+        /* Responsive handled by responsive.css — no overrides here */
+    </style>
+    <link rel="stylesheet" href="quote-section.css?v=3">
+    <link rel="stylesheet" href="ad.css?v=3">
+
+    <!-- ✅ Responsive overrides — must come LAST -->
+    <link rel="stylesheet" href="responsive.css?v=1">
+</head>
+<body>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <div class="hero-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-e">E</span><span class="logo-text">NTABLATURE</span>
+            </div>
+            
+            <div class="menu-icon" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">INSIGHTS</a></li>
+                <li><a href="#">PUBLICATIONS</a></li>
+                <li><a href="#">INITIATIVES</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            
+            <a href="#" class="btn btn-nav">JOIN US <span class="arrow">&gt;</span></a>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-text-area">
+                <h1 class="hero-title">
+                    <span class="text-white">Building</span><br>
+                    <span class="text-gold">Thought.</span><br>
+                    <span class="text-white">Shaping</span><br>
+                    <span class="text-gold">Tomorrow.</span>
+                </h1>
+                
+                <div class="hero-divider"></div>
+                
+                <p class="hero-subtitle">
+                    Entablature is a platform for rigorous ideas, meaningful dialogue and enduring impact on public life and policy.
+                </p>
+                
+                <a href="#" class="btn btn-hero">EXPLORE OUR WORK <span class="arrow">&gt;</span></a>
+            </div>
+        </div>
+        
+        <!-- Hero Background Image -->
+        <div class="hero-image"></div>
+    </div>
+
+    <!-- ===================== PILLARS SECTION ===================== -->
+    <section class="features-section">
+
+        <div class="features-grid pillars">
+
+            <div class="feature-card">
+                <div class="card-top">
+                    <i class="ri-lightbulb-flash-line"></i>
+                    <h3>Ideas</h3>
+                </div>
+                <p>Exploring the foundational intellectual movements and paradigm-shifting ideas that shape modern societies, cultures, and governance institutions.</p>
+                <span class="card-arrow">→</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-top">
+                    <i class="ri-bank-line"></i>
+                    <h3>Structure</h3>
+                </div>
+                <p>Designing and analyzing robust governance frameworks that strengthen institutional structures, policy systems, and administrative processes.</p>
+                <span class="card-arrow">→</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-top">
+                    <i class="ri-earth-line"></i>
+                    <h3>Civilization</h3>
+                </div>
+                <p>Fostering global dialogue, cultural understanding, and philosophical inquiry to build a more just, harmonious, and prosperous world order.</p>
+                <span class="card-arrow">→</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-top">
+                    <i class="ri-team-line"></i>
+                    <h3>Impact</h3>
+                </div>
+                <p>Translating rigorous academic research and theory into actionable public policy strategies to drive measurable, real-world societal impact.</p>
+                <span class="card-arrow">→</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== QUOTE SECTION ===================== -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <div class="quote-icon">"</div>
+            <h2>
+                Civilizations are not inherited.<br>
+                They are built—through ideas,<br>
+                institutions, and the courage<br>
+                to imagine better.
+            </h2>
+            <div class="quote-line"></div>
+        </div>
+        <div class="quote-image">
+            <img src="statue.png" alt="Classical statue representing civilization">
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <div class="footer-container">
+        <!-- FIRST SECTION -->
+        <div class="footer-section logo-section">
+          <div class="logo-wrapper">
+            <img src="https://play-lh.googleusercontent.com/IH1yKsOGNhqysO_5VYkYZ-sTqvWkPiRde5tsihxZXlr6eD2Jo3Jp14CALBFveySKrK1eZ3OL02O_Y0ZxQmQu=w240-h480-rw" />
+            <div class="logo-text-footer">
+              <h2>ENTABLATURE</h2>
+              <p>Ideas. Structure. Civilization.</p>
+            </div>
+          </div>
+          <!-- ICONS -->
+          <div class="social-icons">
+            <i class="ri-linkedin-fill"></i>
+            <i class="ri-twitter-x-line"></i>
+            <i class="ri-youtube-fill"></i>
+          </div>
+        </div>
+
+        <!-- SECOND -->
+        <div class="footer-section">
+          <h3>EXPLORE</h3>
+          <a href="#">About Us</a>
+          <a href="#">Our Vision</a>
+          <a href="#">Insights</a>
+          <a href="#">Publications</a>
+          <a href="#">Initiatives</a>
+          <a href="#">Fellowships</a>
+        </div>
+
+        <!-- THIRD -->
+        <div class="footer-section">
+          <h3>RESOURCES</h3>
+          <a href="#">Articles</a>
+          <a href="#">Reports</a>
+          <a href="#">Working Papers</a>
+          <a href="#">Events</a>
+          <a href="#">Media Kit</a>
+          <a href="#">Annual Reports</a>
+        </div>
+
+        <!-- FOURTH -->
+        <div class="footer-section stay-section">
+          <h3>STAY CONNECTED</h3>
+          <p>Subscribe to our newsletter for the latest insights, announcements, and policy publications.</p>
+          <div class="input-box">
+            <input type="email" placeholder="Your email address" />
+            <button id="subscribeBtn"><i class="ri-arrow-right-line"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom" style="margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255, 200, 87, 0.25); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 13px; color: rgba(255, 255, 255, 0.65);">
+        <div>
+          &copy; 2026 Entablature. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFC857'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Privacy Policy</a>
+          <a href="#" style="color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFC857'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Terms of Service</a>
+          <a href="#" style="color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFC857'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Cookie Settings</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== ADVERTISEMENT POPUP ===================== -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+            <section class="promo-section">
+                <div class="promo-content">
+                    <span class="promo-tag">FEATURED OPPORTUNITY</span>
+                    <h2 id="popupTitle">Join Our Internship Program</h2>
+                    <p>
+                        Work on real-world projects, collaborate with talented peers, and gain valuable industry experience in research, design, and technology.
+                    </p>
+                    <div class="promo-buttons">
+                        <a href="https://forms.gle/RZEPFkDtpKjEsxmv7" target="_blank" class="promo-btn primary">
+                            Apply Now
+                        </a>
+                        <a href="https://iisppracademy.com/" target="_blank" class="promo-btn secondary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <button class="popup-close" id="popupClose" aria-label="Close advertisement">×</button>
+        </div>
+    </div>
+
+    <script>
+        // Navbar Menu Toggle & Interactive Micro-animations
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuBtn && navLinks) {
+            const menuIcon = menuBtn.querySelector('i');
+            
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('open');
+                
+                // Toggle between Hamburger and Close icons
+                if (navLinks.classList.contains('open')) {
+                    menuIcon.classList.replace('ri-menu-line', 'ri-close-line');
+                    menuBtn.style.transform = 'rotate(90deg)';
+                } else {
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Auto-close menu drawer when a navigation link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                });
+            });
+
+            // Close menu drawer if clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                    menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+                    menuBtn.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
+        // Popup Logic — show after 1.5s
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+
+        function showPopup() {
+            if (popupOverlay) {
+                popupOverlay.style.display = 'flex';
+            }
+        }
+
+        function closePopup() {
+            if (popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        }
+
+        setTimeout(showPopup, 1500);
+
+        if (popupClose) popupClose.addEventListener('click', closePopup);
+        if (popupOverlay) {
+            popupOverlay.addEventListener('click', (event) => {
+                if (event.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

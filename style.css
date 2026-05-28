@@ -1,0 +1,594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #020710;
+    color: white;
+    min-height: 100vh;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #020710; /* Clean, deep navy base */
+}
+
+/* Layered cinematic blend placed on the parent container so it is completely unaffected by the image's CSS filter */
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(2, 7, 16, 1) 0%,           /* Matches the solid navy background perfectly on the left */
+        rgba(2, 7, 16, 1) 35%,          /* Keep it completely solid dark navy behind the text */
+        rgba(2, 7, 16, 0.85) 50%,        /* Seamless, highly feathered shift begins */
+        rgba(2, 7, 16, 0.30) 75%,        /* Gentle atmospheric middle blend */
+        rgba(2, 7, 16, 0) 100%           /* Fully blends into the bright temple image on the right */
+    );
+    z-index: 1; /* Sits on top of the image but below the text (z-index 10) */
+    pointer-events: none;
+}
+
+/* One Unified Background Layer: Pushed to the right half so the image emerges from the navy base */
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Restricts the image to the right, leaving the left side purely solid navy */
+    height: 100%;
+    background-image: url('images/hero_temple.png');
+    background-size: cover;
+    background-position: center; /* Center the architecture inside its section */
+    background-repeat: no-repeat;
+    z-index: 0;
+    filter: contrast(1.05) brightness(1.05); /* Turned brightness down from 1.18 to 1.05 to restore focus to text/buttons */
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 100px 20px;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0px;
+    cursor: pointer;
+}
+
+.logo-e {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 500;
+    color: #e5c158;
+    line-height: 0.9;
+    border-top: 2px solid #e5c158;
+    padding-top: 2px;
+}
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 5px;
+    line-height: 0.9;
+    padding-top: 2px;
+    display: inline-block;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    position: relative; /* Required for absolute positioning of pseudo-element */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Slightly increased to 14px to stand out elegantly */
+    font-weight: 600;
+    letter-spacing: 2px; /* Premium letter spacing */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* Positions the underline slightly below the link text */
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background-color: #e5c158; /* Rich brand gold */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%); /* Keeps expansion centered */
+}
+
+.nav-links a:hover {
+    color: #e5c158;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expands the line outwards from the center */
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Aligned to 14px */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    background-size: 200% 100%; /* Allows smooth sliding gradient transition */
+    background-position: left center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-position: right center; /* Slides the gold gradient smoothly */
+    box-shadow: 0 8px 24px rgba(229, 193, 88, 0.35); /* Premium soft gold glow */
+}
+
+.btn-nav {
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
+    border: none;
+    padding: 12px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-nav:hover {
+    color: #020710;
+}
+
+.arrow {
+    font-size: 13px; /* Aligned with text size */
+    font-weight: 700;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Keep text floating above image if they overlap at all */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 60px 100px 100px; /* Shifted left padding slightly inward to connect with blend */
+}
+
+.hero-text-area {
+    max-width: 500px; /* Slightly wider to let lines balance elegantly into the glow transition */
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 88px; /* Slightly increased for stronger visual presence */
+    font-weight: 400;
+    line-height: 1.02; /* Tightened from 1.05 to group the words elegantly */
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-gold {
+    color: #e5c158;
+}
+
+.hero-divider {
+    width: 100%;
+    max-width: 420px; /* Lengthened to 420px to perfectly reach the end of 'w' in 'Tomorrow.' */
+    height: 1.5px;
+    background: #e5c158;
+    margin-bottom: 30px;
+}
+
+.hero-subtitle {
+    font-size: 17px; /* Increased from 15px for much better readability */
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85); /* Slightly brighter off-white */
+    margin-bottom: 40px;
+    max-width: 460px; /* Adjusted container width */
+    letter-spacing: 0.5px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
+    border: none;
+    padding: 15px 36px;
+    font-size: 13px; /* Increased from 11px to match overall scale */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.btn-hero:hover {
+    color: #020710;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+    background: #1a1a1a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(100px);
+    border-top: 1.5px solid rgba(255, 200, 87, 0.7);
+    padding: 70px 7%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-right: 45px;
+}
+
+.footer-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 200, 87, 0.5);
+}
+
+.footer-section:last-child::after {
+    display: none;
+}
+
+.logo-section {
+    min-width: 280px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.logo-wrapper img {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 200, 87, 0.6);
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.logo-text-footer h2 {
+    color: #F8F8F2;
+    font-family: 'Cinzel', serif; /* teammate's original font */
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.logo-text-footer p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.social-icons i {
+    color: #FFC857;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    transform: translateY(-4px);
+    color: #ffe09a;
+}
+
+.footer-section h3 {
+    color: #FFC857;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #FFC857;
+    transform: translateX(4px);
+}
+
+.stay-section {
+    max-width: 290px;
+}
+
+.stay-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    width: 100%;
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.input-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 14px;
+    color: white;
+    font-size: 13px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.input-box button {
+    width: 60px;
+    border: none;
+    background: #FFC857;
+    color: #07142D;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-box button:hover {
+    background: #ffd97b;
+}
+
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features-section{
+    width:100%;
+    padding:0;
+    background:#0D1B3D;
+    position:relative;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.features-header{
+    text-align:center;
+    padding:80px 20px 45px;
+    background:#0D1B3D;
+}
+
+.section-title{
+    font-family:'Cinzel',serif;
+    font-size:38px;
+    font-weight:500;
+    letter-spacing:2px;
+    color:#FAF8F2;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.divider{
+    width:80px;
+    height:2px;
+    background:#FFC857;
+    margin:auto;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.features-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:#FAF8F2;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.feature-card{
+    position:relative;
+    width:100%;
+    min-height:300px;
+    padding:45px 40px;
+    background:#FAF8F2;
+    border-right:1px solid rgba(13,27,61,0.12);
+    border-bottom:1px solid rgba(13,27,61,0.12);
+    transition:all .35s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(40px);
+    cursor:pointer;
+}
+
+/* remove borders */
+
+.feature-card:nth-child(3),
+.feature-card:nth-child(6){
+    border-right:none;
+}
+
+.feature-card:nth-child(4),
+.feature-card:nth-child(5),
+.feature-card:nth-child(6){
+    border-bottom:none;
+}
+
+/* reveal animation */
+
+.feature-card.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* hover effect */
+
+.feature-card:hover{
+    background:#fffdf8;
+    transform:translateY(-6px);
+    z-index:2;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* gold top line */
+
+.feature-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#FFC857;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.35s ease;
+}
+
+.feature-card:hover::before{
+    transform:scaleX(1);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.feature-card i{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:28px;
+    transition:.35s ease;
+}
+
+/* alternating icon colors */
+
+.feature-card:nth-child(odd) i{
+    background:#0D1B3D;
+    color:#FFC857;
+}
+
+.feature-card:nth-child(even) i{
+    background:#D9A441;
+    color:#FAF8F2;
+}
+
+.feature-card:hover i{
+    transform:scale(1.08);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.feature-card h3{
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.4;
+    letter-spacing:1px;
+    color:#1A1A1A;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    max-width:240px;
+}
+
+.feature-card p{
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    line-height:1.9;
+    color:#4D4D4D;
+    max-width:260px;
+}
+
