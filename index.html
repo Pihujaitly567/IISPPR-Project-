@@ -11,7 +11,7 @@
     <!-- REMIX ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -66,8 +66,8 @@
         @media (max-width: 1100px) { .features-grid.pillars { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) { .features-grid.pillars { grid-template-columns: 1fr; } }
     </style>
-    <link rel="stylesheet" href="quote-section.css?v=2">
-    <link rel="stylesheet" href="ad.css?v=2">
+    <link rel="stylesheet" href="quote-section.css?v=3">
+    <link rel="stylesheet" href="ad.css?v=3">
 </head>
 <body>
 
@@ -274,23 +274,33 @@
         // Navbar Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
-        
-        if(menuBtn && navLinks) {
+
+        if (menuBtn && navLinks) {
             menuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+                navLinks.classList.toggle('open');
             });
         }
 
-        // Popup Logic
+        // Popup Logic — show after 1.5s
         const popupOverlay = document.getElementById('popupOverlay');
         const popupClose = document.getElementById('popupClose');
 
-        function closePopup() {
-            if(popupOverlay) popupOverlay.style.display = 'none';
+        function showPopup() {
+            if (popupOverlay) {
+                popupOverlay.style.display = 'flex';
+            }
         }
 
-        if(popupClose) popupClose.addEventListener('click', closePopup);
-        if(popupOverlay) {
+        function closePopup() {
+            if (popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        }
+
+        setTimeout(showPopup, 1500);
+
+        if (popupClose) popupClose.addEventListener('click', closePopup);
+        if (popupOverlay) {
             popupOverlay.addEventListener('click', (event) => {
                 if (event.target === popupOverlay) {
                     closePopup();

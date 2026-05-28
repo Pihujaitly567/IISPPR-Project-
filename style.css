@@ -708,12 +708,13 @@ footer {
         border-radius: 8px;
         text-align: center;
         gap: 16px;
+        list-style: none;
     }
-    .nav-links.active {
-        display: flex;
+    .nav-links.open {
+        display: flex !important;
     }
     .btn-nav {
-        display: none; /* Hide JOIN US button in navbar on small screens to save space */
+        display: none;
     }
     .hero-content {
         padding: 30px 20px 60px;
