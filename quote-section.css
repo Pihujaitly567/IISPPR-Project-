@@ -1,0 +1,78 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* FULL SCREEN QUOTE SECTION */
+
+.quote-section{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #071a2f;
+}
+
+/* LEFT SIDE */
+
+.quote-content{
+    width: 50%;
+    padding: 80px;
+}
+
+.quote-icon{
+    color: #d4a43c;
+    font-size: 80px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.quote-content h2{
+    color: #ffffff;
+    font-size: 58px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* GOLD LINE */
+
+.quote-line{
+    width: 90px;
+    height: 3px;
+    background: #d4a43c;
+    margin-top: 35px;
+}
+
+/* RIGHT IMAGE SIDE */
+
+.quote-image{
+    width: 50%;
+    height: 100vh;
+}
+
+/* FULL WIDTH + HEIGHT IMAGE */
+
+.quote-image img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
