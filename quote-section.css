@@ -1,78 +1,89 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
 
-/* RESET */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
-body{
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: "Cormorant Garamond", serif;
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #071a2f; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* FULL SCREEN QUOTE SECTION */
 
-.quote-section{
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: #071a2f;
+.quote-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #071a2f;
 }
 
-/* LEFT SIDE */
 
-.quote-content{
-    width: 50%;
-    padding: 80px;
+.quote-content {
+  width: 50%;
+  padding: 80px;
 }
 
-.quote-icon{
-    color: #d4a43c;
-    font-size: 80px;
-    margin-bottom: 20px;
-    line-height: 1;
+
+.quote-icon {
+  color: #d4a43c; 
+  font-size: 60px;
+  margin-bottom: 10px;
+  line-height: 1;
+  font-family: Georgia, serif; 
 }
 
-.quote-content h2{
-    color: #ffffff;
-    font-size: 58px;
-    line-height: 1.5;
-    font-weight: 300;
+/* Main quote text */
+.quote-content h2 {
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
-/* GOLD LINE */
 
-.quote-line{
-    width: 90px;
-    height: 3px;
-    background: #d4a43c;
-    margin-top: 35px;
+.quote-line {
+  width: 60px;
+  height: 3px;
+  background: #d4a43c;
+  margin-top: 25px;
 }
 
-/* RIGHT IMAGE SIDE */
 
-.quote-image{
-    width: 50%;
-    height: 100vh;
+.quote-image {
+  width: 50%;
+  height: 100vh;
+  position: relative; 
 }
 
-/* FULL WIDTH + HEIGHT IMAGE */
 
-.quote-image img{
-    width: 100%;
-    height: 100%;
+.quote-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    #071a2f 0%, 
+    rgba(7, 26, 47, 0.5) 40%, 
+    transparent 100%
+  );
+  pointer-events: none; 
+  z-index: 1;
+}
 
-    object-fit: cover;
-    display: block;
+.quote-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
