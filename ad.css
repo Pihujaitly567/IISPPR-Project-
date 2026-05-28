@@ -50,6 +50,7 @@
     display: grid;
     place-items: center;
     transition: background var(--transition), transform var(--transition);
+    z-index: 10;
 }
 
 .popup-close:hover,
