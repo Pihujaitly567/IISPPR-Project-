@@ -212,7 +212,8 @@ body {
 }
 
 .hero-divider {
-    width: 420px; /* Lengthened to 420px to perfectly reach the end of 'w' in 'Tomorrow.' */
+    width: 100%;
+    max-width: 420px; /* Lengthened to 420px to perfectly reach the end of 'w' in 'Tomorrow.' */
     height: 1.5px;
     background: #e5c158;
     margin-bottom: 30px;
@@ -679,15 +680,18 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .navbar {
         padding: 16px 20px;
         flex-direction: column;
+        align-items: center;
     }
     .nav-links {
         flex-direction: column;
+        flex-wrap: wrap;
         gap: 12px;
         text-align: center;
+        padding: 0;
     }
     .hero-content {
         padding: 30px 20px 60px;
