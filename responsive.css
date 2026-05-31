@@ -60,8 +60,18 @@
   .hero-subtitle {
     font-size: 15.5px;
   }
+  .hero-container {
+    min-height: auto !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
   .hero-image {
-    width: 58%;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    background-image: url('images/tablet.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
 
   /* Pillars – 2 column grid */
@@ -106,6 +116,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  
+  .logo {
+    gap: 10px;
+  }
+  .logo-img {
+    height: 34px;
+  }
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: 3px;
   }
   
   .menu-icon {
@@ -216,19 +237,20 @@
 
   /* Hero */
   .hero-container {
-    min-height: 100svh;
+    min-height: auto !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
   }
   .hero-image {
-    width: 100%;
-    opacity: 0.35;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    background-image: url('images/tablet.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
   .hero-container::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(2, 7, 16, 0.85) 0%,
-      rgba(2, 7, 16, 0.6) 60%,
-      rgba(2, 7, 16, 0.85) 100%
-    );
+    display: none !important;
   }
   .hero-content {
     padding: 30px 30px 70px;
@@ -301,26 +323,20 @@
     object-position: top center;
   }
 
-  /* Footer borders wrapping */
-  .footer-container {
+  /* Internship Promo Tablet Overrides */
+  .internship-promo-section {
+    padding: 50px 30px;
+  }
+  .promo-container-inline {
     flex-direction: column;
-    gap: 36px;
+    align-items: flex-start;
+    gap: 24px;
   }
-  .footer-section {
-    width: 100%;
-    padding-right: 0;
-    padding-bottom: 28px;
+  .promo-text-inline h2 {
+    font-size: 26px;
   }
-  .footer-section::after {
-    width: 100%;
-    height: 1px;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: auto;
-  }
-  .stay-section {
-    max-width: 100%;
+  .promo-text-inline p {
+    font-size: 15px;
   }
 
   /* Advertisement Popup vertical space fix */
@@ -347,12 +363,18 @@
     justify-content: space-between;
     position: relative;
   }
+  .logo {
+    gap: 8px;
+  }
+  .logo-img {
+    height: 28px;
+  }
   .logo-e {
     font-size: 34px;
   }
   .logo-text {
-    font-size: 17px;
-    letter-spacing: 3px;
+    font-size: 15px;
+    letter-spacing: 2px;
   }
   .menu-icon {
     display: flex !important;
@@ -459,20 +481,20 @@
 
   /* Hero */
   .hero-container {
-    min-height: 100svh;
+    min-height: auto !important;
+    height: auto !important;
+    aspect-ratio: 2 / 3 !important;
   }
   .hero-image {
-    width: 100%;
-    opacity: 0.28;
-    background-position: center top;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    background-image: url('images/mobile.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
   .hero-container::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(2, 7, 16, 0.92) 0%,
-      rgba(2, 7, 16, 0.55) 50%,
-      rgba(2, 7, 16, 0.92) 100%
-    );
+    display: none !important;
   }
   .hero-content {
     padding: 24px 18px 60px;
@@ -567,85 +589,6 @@
     object-position: top center;
   }
 
-  /* Footer */
-  footer {
-    padding: 50px 5%;
-  }
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer-section {
-    width: 100%;
-    padding-right: 0;
-    padding-bottom: 24px;
-  }
-  .footer-section::after {
-    width: 100%;
-    height: 1px;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: auto;
-  }
-  .footer-section:last-child::after {
-    display: none;
-  }
-  .logo-wrapper {
-    gap: 12px;
-  }
-  .logo-wrapper img {
-    width: 50px;
-    height: 50px;
-  }
-  .logo-text-footer h2 {
-    font-size: 22px;
-    letter-spacing: 1.5px;
-  }
-  .logo-text-footer p {
-    font-size: 12px;
-  }
-  .social-icons {
-    gap: 14px;
-    margin-top: 22px;
-  }
-  .social-icons i {
-    font-size: 20px;
-  }
-  .footer-section h3 {
-    font-size: 13px;
-    margin-bottom: 14px;
-  }
-  .footer-section a {
-    font-size: 13.5px;
-    margin-bottom: 10px;
-  }
-  .stay-section {
-    max-width: 100%;
-  }
-  .stay-section p {
-    font-size: 13px;
-  }
-  .input-box input {
-    font-size: 13px;
-    padding: 12px;
-  }
-  .input-box button {
-    width: 50px;
-    font-size: 18px;
-  }
-  .footer-bottom {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-    font-size: 12px !important;
-  }
-  .footer-bottom div:last-child {
-    gap: 14px !important;
-    flex-wrap: wrap;
-    display: flex;
-  }
-
   /* Popup space scaling on small screen heights / mobile landscape */
   .popup-overlay {
     padding: 12px;
@@ -682,6 +625,28 @@
     text-align: center !important;
     padding: 13px 20px !important;
   }
+
+  /* Internship Promo Mobile Overrides */
+  .internship-promo-section {
+    padding: 40px 20px;
+  }
+  .promo-container-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    text-align: center;
+  }
+  .promo-text-inline h2 {
+    font-size: 22px;
+  }
+  .promo-text-inline p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .btn-apply {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /* ============================================================
@@ -691,12 +656,15 @@
   .hero-title {
     font-size: 34px;
   }
+  .logo-img {
+    height: 24px;
+  }
   .logo-e {
     font-size: 28px;
   }
   .logo-text {
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 12px;
+    letter-spacing: 1px;
   }
   .quote-content h2 {
     font-size: 16px !important;
