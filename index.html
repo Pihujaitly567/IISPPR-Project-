@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css?v=4" />
-    <!-- <link rel="stylesheet" href="ad.css" /> -->
+    <link rel="stylesheet" href="ad.css" />
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -74,49 +74,69 @@
 
       /* Responsive handled by responsive.css — no overrides here */
     </style>
-    <link rel="stylesheet" href="ad.css?v=3" />
     <link rel="stylesheet" href="quote-section.css?v=3" />
+    <link rel="stylesheet" href="ad.css?v=3" />
 
     <!-- ✅ Responsive overrides — must come LAST -->
     <link rel="stylesheet" href="responsive.css?v=1" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="IISPP Academy Logo" class="logo-img" />
-        <span class="logo-text">IISPPRAcademy</span>
-      </div>
-    </nav>
-
     <!-- ===================== HERO SECTION ===================== -->
     <div class="hero-container">
       <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="https://iisppracademy.com" target="_blank">
+            <img src="images/logo.png" />
+          </a>
+          <span class="logo-text">IISPPRAcademy</span>
+        </div>
+      </nav>
 
       <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-text-area">
+          <h1 class="hero-title">
+            <span class="text-white">Building</span><br />
+            <span class="text-gold">Thought.</span><br />
+            <span class="text-white">Shaping</span><br />
+            <span class="text-gold">Tomorrow.</span>
+          </h1>
 
+          <div class="hero-divider"></div>
+
+          <p class="hero-subtitle">
+            IISPPRAcademy is a platform for rigorous ideas, meaningful dialogue
+            and enduring impact on public life and policy.
+          </p>
+        </div>
+      </div>
 
       <!-- Hero Background Image -->
-      <a href="http://iisppracademy.com" target="_blank">
-        <div class="hero-image"></div>
-      </a>
+      <div class="hero-image"></div>
     </div>
 
     <!-- ===================== INTERNSHIP PROMO SECTION ===================== -->
     <section class="internship-promo-section">
       <div class="promo-container-inline">
-        <div class="promo-text-inline">
-          <span class="promo-label">FEATURED OPPORTUNITY</span>
-          <h2>Join Our Internship Program</h2>
-          <p>
-            Collaborate with talented peers, work on real-world policy research,
-            and gain valuable civilization-shaping experience.
-          </p>
+        <div class="promo-content-wrapper">
+          <div class="promo-icon-wrapper">
+            <i class="ri-award-line"></i>
+          </div>
+          <div class="promo-text-inline">
+            <span class="promo-label">FEATURED OPPORTUNITY</span>
+            <h2>Join Our Internship</h2>
+            <p>
+              Collaborate with talented peers, work on real-world policy
+              research, and gain valuable civilization-shaping experience.
+            </p>
+          </div>
         </div>
         <a
-          href="https://forms.gle/RZEPFkDtpKjEsxmv7"
+          href="https://forms.gle/G5KEvkFg6xGo9ui6A"
           target="_blank"
           class="btn btn-apply"
-          >JOIN NOW <span class="arrow">&gt;</span></a
+          >APPLY NOW <span class="arrow">&gt;</span></a
         >
       </div>
     </section>
@@ -199,7 +219,7 @@
     </section>
 
     <!-- ===================== ADVERTISEMENT POPUP ===================== -->
-    <!-- <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-overlay" id="popupOverlay">
       <div
         class="popup-card"
         role="dialog"
@@ -241,9 +261,9 @@
           ×
         </button>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <script>
+    <script>
       // Popup Logic — show after 1.5s
       const popupOverlay = document.getElementById("popupOverlay");
       const popupClose = document.getElementById("popupClose");
@@ -270,7 +290,7 @@
           }
         });
       }
-    </script> -->
+    </script>
 
     <script src="script.js"></script>
   </body>
