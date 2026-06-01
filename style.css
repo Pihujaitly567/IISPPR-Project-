@@ -76,23 +76,19 @@ body {
 
 .logo {
     display: flex;
-    align-items: baseline;
-    gap: 0px;
+    align-items: center;
+    gap: 12px;
     cursor: pointer;
 }
 
-.logo-e {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 44px;
-    font-weight: 500;
-    color: #e5c158;
-    line-height: 0.9;
-    border-top: 2px solid #e5c158;
-    padding-top: 2px;
+.logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
-    font-family: 'Cormorant Garamond', serif;
+    font-family:'Times New Roman', Times, serif;
     font-size: 22px;
     font-weight: 400;
     color: #ffffff;
@@ -256,169 +252,205 @@ body {
     color: #020710;
 }
 
+
 /* =========================
-   FOOTER
+   INTERNSHIP PROMO SECTION
 ========================= */
 
-footer {
+.internship-promo-section {
     width: 100%;
-    background: #1a1a1a;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(100px);
-    border-top: 1.5px solid rgba(255, 200, 87, 0.7);
-    padding: 70px 7%;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 45px;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
+    padding: 100px 7%;
+    background: #020710;
     position: relative;
-    padding-right: 45px;
-}
-
-.footer-section::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 200, 87, 0.5);
-}
-
-.footer-section:last-child::after {
-    display: none;
-}
-
-.logo-section {
-    min-width: 280px;
-}
-
-.logo-wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.logo-wrapper img {
-    width: 62px;
-    height: 62px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 200, 87, 0.6);
-    padding: 2px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.logo-text-footer h2 {
-    color: #F8F8F2;
-    font-family: 'Cinzel', serif; /* teammate's original font */
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.logo-text-footer p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.social-icons {
-    display: flex;
-    gap: 18px;
-    margin-top: 28px;
-}
-
-.social-icons i {
-    color: #FFC857;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.social-icons i:hover {
-    transform: translateY(-4px);
-    color: #ffe09a;
-}
-
-.footer-section h3 {
-    color: #FFC857;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-}
-
-.footer-section a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    margin-bottom: 12px;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.footer-section a:hover {
-    color: #FFC857;
-    transform: translateX(4px);
-}
-
-.stay-section {
-    max-width: 290px;
-}
-
-.stay-section p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.input-box {
-    width: 100%;
-    display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.03);
+    z-index: 10;
     overflow: hidden;
 }
 
-.input-box input {
+/* Ambient premium background aura glow */
+.internship-promo-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(229, 193, 88, 0.1) 0%, rgba(2, 7, 16, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(40px);
+}
+
+.promo-container-inline {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 193, 88, 0.15);
+    border-radius: 16px;
+    padding: 55px 70px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium architectural inner dashed blueprint border */
+.promo-container-inline::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px dashed rgba(229, 193, 88, 0.12);
+    border-radius: 12px;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-container-inline:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 193, 88, 0.35);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(229, 193, 88, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.promo-container-inline:hover::before {
+    border-style: solid;
+    border-color: rgba(229, 193, 88, 0.25);
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.promo-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
     flex: 1;
-    background: transparent;
+}
+
+.promo-icon-wrapper {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    border-radius: 50%;
+    background: rgba(229, 193, 88, 0.08);
+    border: 1px solid rgba(229, 193, 88, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5c158;
+    font-size: 28px;
+    box-shadow: 0 0 20px rgba(229, 193, 88, 0.05);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-icon-wrapper i {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-container-inline:hover .promo-icon-wrapper {
+    background: rgba(229, 193, 88, 0.15);
+    border-color: rgba(229, 193, 88, 0.45);
+    box-shadow: 0 0 30px rgba(229, 193, 88, 0.15);
+}
+
+.promo-container-inline:hover .promo-icon-wrapper i {
+    transform: rotate(15deg) scale(1.1);
+    color: #ffd976;
+}
+
+.promo-text-inline {
+    flex: 1;
+}
+
+.promo-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #e5c158;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.promo-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #e5c158;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #e5c158, 0 0 20px #e5c158;
+}
+
+.promo-text-inline h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(120deg, #ffffff 60%, #ffd976 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.promo-text-inline p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 750px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+}
+
+.btn-apply {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
     border: none;
-    outline: none;
-    padding: 14px;
-    color: white;
+    padding: 16px 36px;
     font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(229, 193, 88, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 5;
 }
 
-.input-box input::placeholder {
-    color: rgba(255, 255, 255, 0.45);
+.btn-apply .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-.input-box button {
-    width: 60px;
-    border: none;
-    background: #FFC857;
-    color: #07142D;
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.3s;
+.btn-apply:hover {
+    color: #020710;
+    transform: translateY(-2px);
+    background-position: right center;
+    box-shadow: 0 12px 28px rgba(229, 193, 88, 0.45);
 }
 
-.input-box button:hover {
-    background: #ffd97b;
+.btn-apply:hover .arrow {
+    transform: translateX(4px);
 }
-
 
 /* =========================
    FEATURES SECTION
@@ -595,4 +627,4 @@ footer {
     color:#4D4D4D;
     max-width:260px;
 }
-
+

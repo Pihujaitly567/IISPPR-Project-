@@ -1,5 +1,5 @@
 /* ============================================================
-   IISPP / ENTABLATURE LANDING PAGE RESPONSIVE STYLESHEET
+   IISPP / IISPPRAcademy LANDING PAGE RESPONSIVE STYLESHEET
    Consolidated across all screen breakpoints for unified rendering
    ============================================================ */
 
@@ -64,6 +64,18 @@
     width: 58%;
   }
 
+  /* Internship Promo */
+  .internship-promo-section {
+    padding: 70px 5%;
+  }
+  .promo-container-inline {
+    padding: 40px 45px;
+    gap: 30px;
+  }
+  .promo-text-inline h2 {
+    font-size: 34px;
+  }
+
   /* Pillars – 2 column grid */
   .features-grid.pillars {
     grid-template-columns: repeat(2, 1fr);
@@ -102,116 +114,9 @@
   /* Navbar Container */
   .navbar {
     padding: 20px 30px;
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  
-  .menu-icon {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 1100;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Prevent scrolling when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
-  
-  /* Float navbar on top when menu is open */
-  body.menu-open .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    padding: 20px 30px;
-  }
-
-  /* Full Screen Overlay Drawer */
-  .nav-links {
-    display: flex !important; /* Retain layout for transitions */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* FIXED positioning to overlay whole display */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #020710; /* Completely opaque deep navy to hide text behind */
-    padding: 80px 0 40px; /* Push content down to avoid overlapping floating logo/close icon */
-    gap: 32px;
-    opacity: 0;
-    transform: translateX(100%); /* Elegant slide in from right */
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 9999;
-    list-style: none;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-  }
-  
-  .nav-links.open {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-  
-  .nav-links a {
-    display: block;
-    padding: 10px 40px;
-    font-size: 20px; /* Enhanced for full-screen appearance */
-    letter-spacing: 4px; /* Premium letter spacing */
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #e5c158;
-    transform: scale(1.06); /* Premium micro-animation scale */
-  }
-  
-  .nav-links a::after {
-    display: none; /* Hide hover underline effect on mobile */
-  }
-  
-  .mobile-close-li {
-    display: block !important;
-    margin-top: 20px;
-  }
-  .mobile-close-btn {
-    color: #e5c158 !important; /* Standout gold */
-    font-weight: 700 !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 16px !important;
-    border: 1px solid rgba(229, 193, 88, 0.4) !important;
-    border-radius: 30px !important;
-    padding: 10px 24px !important;
-    background: rgba(229, 193, 88, 0.05) !important;
-    transition: all 0.3s ease !important;
-  }
-  .mobile-close-btn:hover {
-    background: rgba(229, 193, 88, 0.15) !important;
-    transform: scale(1.05) !important;
-  }
-  
-  .btn-nav {
-    display: none; /* Remove Join Us on tablet */
+    justify-content: center; /* Center logo on tablet */
   }
 
   /* Hero */
@@ -232,24 +137,68 @@
   }
   .hero-content {
     padding: 30px 30px 70px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
   .hero-text-area {
     max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hero-title {
     font-size: 52px;
     line-height: 1.05;
+    text-align: center;
   }
   .hero-divider {
-    max-width: 100%;
+    width: 80px;
+    height: 2px;
+    background: #e5c158;
+    margin: 0 auto 22px;
   }
   .hero-subtitle {
     font-size: 15px;
-    max-width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
   }
-  .btn-hero {
-    padding: 14px 30px;
+
+  /* Internship Promo */
+  .internship-promo-section {
+    padding: 60px 30px;
+  }
+  .promo-container-inline {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 35px;
+    gap: 25px;
+  }
+  .promo-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .promo-text-inline {
+    text-align: center;
+  }
+  .promo-text-inline h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .promo-text-inline p {
+    font-size: 14.5px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .btn-apply {
+    padding: 14px 32px;
     font-size: 12px;
+    align-self: center;
   }
 
   /* Pillars Grid – 2 column */
@@ -301,28 +250,6 @@
     object-position: top center;
   }
 
-  /* Footer borders wrapping */
-  .footer-container {
-    flex-direction: column;
-    gap: 36px;
-  }
-  .footer-section {
-    width: 100%;
-    padding-right: 0;
-    padding-bottom: 28px;
-  }
-  .footer-section::after {
-    width: 100%;
-    height: 1px;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: auto;
-  }
-  .stay-section {
-    max-width: 100%;
-  }
-
   /* Advertisement Popup vertical space fix */
   .popup-overlay {
     overflow-y: auto;
@@ -344,117 +271,14 @@
     padding: 16px 18px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
+    justify-content: center; /* Center logo on mobile */
   }
-  .logo-e {
-    font-size: 34px;
+  .logo img {
+    height: 34px;
   }
   .logo-text {
     font-size: 17px;
     letter-spacing: 3px;
-  }
-  .menu-icon {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 1100;
-  }
-  
-  /* Prevent scrolling when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  /* Float navbar on top when menu is open */
-  body.menu-open .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    padding: 16px 18px;
-  }
-
-  /* Full Screen Overlay Drawer for Mobile */
-  .nav-links {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #020710; /* Completely solid deep navy */
-    padding: 80px 0 40px;
-    gap: 28px;
-    opacity: 0;
-    transform: translateX(100%); /* Slide in from right */
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 9999;
-    list-style: none;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-  }
-  
-  .nav-links.open {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-  
-  .nav-links a {
-    display: block;
-    padding: 8px 30px;
-    font-size: 18px; /* Readable mobile full-screen text */
-    letter-spacing: 3px;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links a:hover {
-    color: #e5c158;
-    transform: scale(1.06);
-  }
-  
-  .nav-links a::after {
-    display: none; /* Avoid underline hover mechanics on mobile */
-  }
-  
-  .mobile-close-li {
-    display: block !important;
-    margin-top: 15px;
-  }
-  .mobile-close-btn {
-    color: #e5c158 !important; /* Standout gold */
-    font-weight: 700 !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 15px !important;
-    border: 1px solid rgba(229, 193, 88, 0.4) !important;
-    border-radius: 30px !important;
-    padding: 8px 20px !important;
-    background: rgba(229, 193, 88, 0.05) !important;
-    transition: all 0.3s ease !important;
-  }
-  .mobile-close-btn:hover {
-    background: rgba(229, 193, 88, 0.15) !important;
-    transform: scale(1.05) !important;
-  }
-  
-  .btn-nav {
-    display: none;
   }
 
   /* Hero */
@@ -476,32 +300,78 @@
   }
   .hero-content {
     padding: 24px 18px 60px;
-    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
   .hero-text-area {
     max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hero-title {
     font-size: clamp(38px, 10vw, 52px);
     line-height: 1.05;
     margin-bottom: 18px;
+    text-align: center;
   }
   .hero-divider {
-    max-width: 100%;
-    margin-bottom: 22px;
+    width: 80px;
+    height: 2px;
+    background: #e5c158;
+    margin: 0 auto 18px;
   }
   .hero-subtitle {
     font-size: 14.5px;
     line-height: 1.75;
     max-width: 100%;
     margin-bottom: 30px;
+    text-align: center;
   }
-  .btn-hero {
-    padding: 13px 26px;
+
+  /* Internship Promo Mobile */
+  .internship-promo-section {
+    padding: 40px 18px;
+  }
+  .promo-container-inline {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 24px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+  .promo-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .promo-text-inline {
+    text-align: center;
+  }
+  .promo-label {
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .promo-text-inline h2 {
+    font-size: clamp(24px, 7vw, 28px);
+    text-align: center;
+  }
+  .promo-text-inline p {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .btn-apply {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
     font-size: 12px;
-    letter-spacing: 1.2px;
-    width: auto;
-    display: inline-flex;
+    align-self: center;
   }
 
   /* Pillars – 1 column on mobile */
@@ -567,85 +437,6 @@
     object-position: top center;
   }
 
-  /* Footer */
-  footer {
-    padding: 50px 5%;
-  }
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer-section {
-    width: 100%;
-    padding-right: 0;
-    padding-bottom: 24px;
-  }
-  .footer-section::after {
-    width: 100%;
-    height: 1px;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: auto;
-  }
-  .footer-section:last-child::after {
-    display: none;
-  }
-  .logo-wrapper {
-    gap: 12px;
-  }
-  .logo-wrapper img {
-    width: 50px;
-    height: 50px;
-  }
-  .logo-text-footer h2 {
-    font-size: 22px;
-    letter-spacing: 1.5px;
-  }
-  .logo-text-footer p {
-    font-size: 12px;
-  }
-  .social-icons {
-    gap: 14px;
-    margin-top: 22px;
-  }
-  .social-icons i {
-    font-size: 20px;
-  }
-  .footer-section h3 {
-    font-size: 13px;
-    margin-bottom: 14px;
-  }
-  .footer-section a {
-    font-size: 13.5px;
-    margin-bottom: 10px;
-  }
-  .stay-section {
-    max-width: 100%;
-  }
-  .stay-section p {
-    font-size: 13px;
-  }
-  .input-box input {
-    font-size: 13px;
-    padding: 12px;
-  }
-  .input-box button {
-    width: 50px;
-    font-size: 18px;
-  }
-  .footer-bottom {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-    font-size: 12px !important;
-  }
-  .footer-bottom div:last-child {
-    gap: 14px !important;
-    flex-wrap: wrap;
-    display: flex;
-  }
-
   /* Popup space scaling on small screen heights / mobile landscape */
   .popup-overlay {
     padding: 12px;
@@ -691,8 +482,8 @@
   .hero-title {
     font-size: 34px;
   }
-  .logo-e {
-    font-size: 28px;
+  .logo img {
+    height: 28px;
   }
   .logo-text {
     font-size: 14px;
