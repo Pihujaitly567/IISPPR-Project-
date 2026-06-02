@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #020710;
+    color: white;
+    min-height: 100vh;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #020710; /* Clean, deep navy base */
+}
+
+/* Layered cinematic blend placed on the parent container so it is completely unaffected by the image's CSS filter */
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(2, 7, 16, 1) 0%,           /* Matches the solid navy background perfectly on the left */
+        rgba(2, 7, 16, 1) 35%,          /* Keep it completely solid dark navy behind the text */
+        rgba(2, 7, 16, 0.85) 50%,        /* Seamless, highly feathered shift begins */
+        rgba(2, 7, 16, 0.30) 75%,        /* Gentle atmospheric middle blend */
+        rgba(2, 7, 16, 0) 100%           /* Fully blends into the bright temple image on the right */
+    );
+    z-index: 1; /* Sits on top of the image but below the text (z-index 10) */
+    pointer-events: none;
+}
+
+/* One Unified Background Layer: Pushed to the right half so the image emerges from the navy base */
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Restricts the image to the right, leaving the left side purely solid navy */
+    height: 100%;
+    background-image: url('images/hero_temple.png');
+    background-size: cover;
+    background-position: center; /* Center the architecture inside its section */
+    background-repeat: no-repeat;
+    z-index: 0;
+    filter: contrast(1.05) brightness(1.05); /* Turned brightness down from 1.18 to 1.05 to restore focus to text/buttons */
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 100px 20px;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 5px;
+    line-height: 0.9;
+    padding-top: 2px;
+    display: inline-block;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.mobile-close-li {
+    display: none;
+}
+
+.nav-links a {
+    position: relative; /* Required for absolute positioning of pseudo-element */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Slightly increased to 14px to stand out elegantly */
+    font-weight: 600;
+    letter-spacing: 2px; /* Premium letter spacing */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* Positions the underline slightly below the link text */
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background-color: #e5c158; /* Rich brand gold */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%); /* Keeps expansion centered */
+}
+
+.nav-links a:hover {
+    color: #e5c158;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expands the line outwards from the center */
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Aligned to 14px */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    background-size: 200% 100%; /* Allows smooth sliding gradient transition */
+    background-position: left center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-position: right center; /* Slides the gold gradient smoothly */
+    box-shadow: 0 8px 24px rgba(229, 193, 88, 0.35); /* Premium soft gold glow */
+}
+
+.btn-nav {
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
+    border: none;
+    padding: 12px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-nav:hover {
+    color: #020710;
+}
+
+.arrow {
+    font-size: 13px; /* Aligned with text size */
+    font-weight: 700;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Keep text floating above image if they overlap at all */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 60px 100px 100px; /* Shifted left padding slightly inward to connect with blend */
+}
+
+.hero-text-area {
+    max-width: 500px; /* Slightly wider to let lines balance elegantly into the glow transition */
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 88px; /* Slightly increased for stronger visual presence */
+    font-weight: 400;
+    line-height: 1.02; /* Tightened from 1.05 to group the words elegantly */
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-gold {
+    color: #e5c158;
+}
+
+.hero-divider {
+    width: 100%;
+    max-width: 420px; /* Lengthened to 420px to perfectly reach the end of 'w' in 'Tomorrow.' */
+    height: 1.5px;
+    background: #e5c158;
+    margin-bottom: 30px;
+}
+
+.hero-subtitle {
+    font-size: 17px; /* Increased from 15px for much better readability */
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85); /* Slightly brighter off-white */
+    margin-bottom: 40px;
+    max-width: 460px; /* Adjusted container width */
+    letter-spacing: 0.5px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
+    border: none;
+    padding: 15px 36px;
+    font-size: 13px; /* Increased from 11px to match overall scale */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.btn-hero:hover {
+    color: #020710;
+}
+
+
+/* =========================
+   INTERNSHIP PROMO SECTION
+========================= */
+
+.internship-promo-section {
+    width: 100%;
+    padding: 100px 7%;
+    background: #020710;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Ambient premium background aura glow */
+.internship-promo-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(229, 193, 88, 0.1) 0%, rgba(2, 7, 16, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(40px);
+}
+
+.promo-container-inline {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 193, 88, 0.15);
+    border-radius: 16px;
+    padding: 55px 70px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium architectural inner dashed blueprint border */
+.promo-container-inline::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px dashed rgba(229, 193, 88, 0.12);
+    border-radius: 12px;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-container-inline:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 193, 88, 0.35);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(229, 193, 88, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.promo-container-inline:hover::before {
+    border-style: solid;
+    border-color: rgba(229, 193, 88, 0.25);
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.promo-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    flex: 1;
+}
+
+.promo-icon-wrapper {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    border-radius: 50%;
+    background: rgba(229, 193, 88, 0.08);
+    border: 1px solid rgba(229, 193, 88, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5c158;
+    font-size: 28px;
+    box-shadow: 0 0 20px rgba(229, 193, 88, 0.05);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-icon-wrapper i {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-container-inline:hover .promo-icon-wrapper {
+    background: rgba(229, 193, 88, 0.15);
+    border-color: rgba(229, 193, 88, 0.45);
+    box-shadow: 0 0 30px rgba(229, 193, 88, 0.15);
+}
+
+.promo-container-inline:hover .promo-icon-wrapper i {
+    transform: rotate(15deg) scale(1.1);
+    color: #ffd976;
+}
+
+.promo-text-inline {
+    flex: 1;
+}
+
+.promo-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #e5c158;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.promo-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #e5c158;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #e5c158, 0 0 20px #e5c158;
+}
+
+.promo-text-inline h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(120deg, #ffffff 60%, #ffd976 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.promo-text-inline p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 750px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+}
+
+.btn-apply {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    background-size: 200% 100%;
+    border: none;
+    padding: 16px 36px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(229, 193, 88, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 5;
+}
+
+.btn-apply .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-apply:hover {
+    color: #020710;
+    transform: translateY(-2px);
+    background-position: right center;
+    box-shadow: 0 12px 28px rgba(229, 193, 88, 0.45);
+}
+
+.btn-apply:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features-section{
+    width:100%;
+    padding:0;
+    background:#0D1B3D;
+    position:relative;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.features-header{
+    text-align:center;
+    padding:80px 20px 45px;
+    background:#0D1B3D;
+}
+
+.section-title{
+    font-family:'Cinzel',serif;
+    font-size:38px;
+    font-weight:500;
+    letter-spacing:2px;
+    color:#FAF8F2;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.divider{
+    width:80px;
+    height:2px;
+    background:#FFC857;
+    margin:auto;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.features-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:#FAF8F2;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.feature-card{
+    position:relative;
+    width:100%;
+    min-height:300px;
+    padding:45px 40px;
+    background:#FAF8F2;
+    border-right:1px solid rgba(13,27,61,0.12);
+    border-bottom:1px solid rgba(13,27,61,0.12);
+    transition:all .35s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(40px);
+    cursor:pointer;
+}
+
+/* remove borders */
+
+.feature-card:nth-child(3),
+.feature-card:nth-child(6){
+    border-right:none;
+}
+
+.feature-card:nth-child(4),
+.feature-card:nth-child(5),
+.feature-card:nth-child(6){
+    border-bottom:none;
+}
+
+/* reveal animation */
+
+.feature-card.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* hover effect */
+
+.feature-card:hover{
+    background:#fffdf8;
+    transform:translateY(-6px);
+    z-index:2;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* gold top line */
+
+.feature-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#FFC857;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.35s ease;
+}
+
+.feature-card:hover::before{
+    transform:scaleX(1);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.feature-card i{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:28px;
+    transition:.35s ease;
+}
+
+/* alternating icon colors */
+
+.feature-card:nth-child(odd) i{
+    background:#0D1B3D;
+    color:#FFC857;
+}
+
+.feature-card:nth-child(even) i{
+    background:#D9A441;
+    color:#FAF8F2;
+}
+
+.feature-card:hover i{
+    transform:scale(1.08);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.feature-card h3{
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.4;
+    letter-spacing:1px;
+    color:#1A1A1A;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    max-width:240px;
+}
+
+.feature-card p{
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    line-height:1.9;
+    color:#4D4D4D;
+    max-width:260px;
+}
+

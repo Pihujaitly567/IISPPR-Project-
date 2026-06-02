@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Program - IISPPRAcademy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- REMIX ICON -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=4" />
+    <link rel="stylesheet" href="popup.css" />
+
+    <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
+    <style>
+      /* 4-column pillar grid */
+      .features-grid.pillars {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      /* Compact card sizing */
+      .features-grid.pillars .feature-card {
+        min-height: 280px;
+        padding: 55px 42px;
+      }
+
+      /* Horizontal icon + title row */
+      .features-grid.pillars .feature-card .card-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .features-grid.pillars .feature-card .card-top i {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        font-size: 22px;
+        margin-bottom: 0;
+      }
+
+      .features-grid.pillars .feature-card .card-top h3 {
+        margin-bottom: 0;
+        font-size: 20px;
+      }
+
+      .features-grid.pillars .feature-card p {
+        font-size: 15.5px;
+        line-height: 1.7;
+        color: #4d4d4d;
+        max-width: 100%;
+      }
+
+      /* Arrow styling */
+      .feature-card .card-arrow {
+        color: #d4a43c;
+        font-size: 20px;
+        margin-top: auto;
+        padding-top: 16px;
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover .card-arrow {
+        transform: translateX(6px);
+      }
+
+      /* Responsive handled by responsive.css — no overrides here */
+    </style>
+    <link rel="stylesheet" href="quote-section.css?v=3" />
+
+
+    <!-- ✅ Responsive overrides — must come LAST -->
+    <link rel="stylesheet" href="responsive.css?v=1" />
+  </head>
+  <body>
+    <!-- ===================== HERO SECTION ===================== -->
+    <div class="hero-container">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="https://iisppracademy.com" target="_blank">
+            <img src="images/logo.png" />
+          </a>
+          <span class="logo-text">IISPPRAcademy</span>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-text-area">
+          <h1 class="hero-title">
+            <span class="text-white">Building</span><br />
+            <span class="text-gold">Thought.</span><br />
+            <span class="text-white">Shaping</span><br />
+            <span class="text-gold">Tomorrow.</span>
+          </h1>
+
+          <div class="hero-divider"></div>
+
+          <p class="hero-subtitle">
+            IISPPRAcademy is a platform for rigorous ideas, meaningful dialogue
+            and enduring impact on public life and policy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hero Background Image -->
+      <div class="hero-image"></div>
+    </div>
+
+    <!-- ===================== INTERNSHIP PROMO SECTION ===================== -->
+    <section class="internship-promo-section">
+      <div class="promo-container-inline">
+        <div class="promo-content-wrapper">
+          <div class="promo-icon-wrapper">
+            <i class="ri-award-line"></i>
+          </div>
+          <div class="promo-text-inline">
+            <span class="promo-label">FEATURED OPPORTUNITY</span>
+            <h2>Join Our Internship</h2>
+            <p>
+              Collaborate with talented peers, work on real-world policy
+              research, and gain valuable civilization-shaping experience.
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://forms.gle/G5KEvkFg6xGo9ui6A"
+          target="_blank"
+          class="btn btn-apply"
+          >APPLY NOW <span class="arrow">&gt;</span></a
+        >
+      </div>
+    </section>
+
+    <!-- ===================== PILLARS SECTION ===================== -->
+    <section class="features-section">
+      <div class="features-grid pillars">
+        <div class="feature-card">
+          <div class="card-top">
+            <i class="ri-lightbulb-flash-line"></i>
+            <h3>Ideas</h3>
+          </div>
+          <p>
+            Exploring the foundational intellectual movements and
+            paradigm-shifting ideas that shape modern societies, cultures, and
+            governance institutions.
+          </p>
+          <span class="card-arrow">→</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-top">
+            <i class="ri-bank-line"></i>
+            <h3>Structure</h3>
+          </div>
+          <p>
+            Designing and analyzing robust governance frameworks that strengthen
+            institutional structures, policy systems, and administrative
+            processes.
+          </p>
+          <span class="card-arrow">→</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-top">
+            <i class="ri-earth-line"></i>
+            <h3>Civilization</h3>
+          </div>
+          <p>
+            Fostering global dialogue, cultural understanding, and philosophical
+            inquiry to build a more just, harmonious, and prosperous world
+            order.
+          </p>
+          <span class="card-arrow">→</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-top">
+            <i class="ri-team-line"></i>
+            <h3>Impact</h3>
+          </div>
+          <p>
+            Translating rigorous academic research and theory into actionable
+            public policy strategies to drive measurable, real-world societal
+            impact.
+          </p>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== QUOTE SECTION ===================== -->
+    <section class="quote-section">
+      <div class="quote-content">
+        <div class="quote-icon">"</div>
+        <h2>
+          Civilizations are not inherited.<br />
+          They are built—through ideas,<br />
+          institutions, and the courage<br />
+          to imagine better.
+        </h2>
+        <div class="quote-line"></div>
+      </div>
+      <div class="quote-image">
+        <img
+          src="images/statue.png"
+          alt="Classical statue representing civilization"
+        />
+      </div>
+    </section>
+
+    <!-- ===================== ADVERTISEMENT POPUP ===================== -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-box" id="popupBox">
+        <button class="popup-close" id="popupClose" aria-label="Close popup">&times;</button>
+        <a href="https://iisppracademy.com" target="_blank" class="popup-link" id="popupLink">
+          <!-- Banner image fills the entire popup via popup.css background-image -->
+        </a>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

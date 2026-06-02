@@ -1,0 +1,109 @@
+/* =========================
+   AD POPUP — ad.css
+   Depends on: images/popup_banner.jpg
+========================= */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-box {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    max-width: 1200px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(229, 193, 88, 0.25),
+        0 0 60px rgba(229, 193, 88, 0.12);
+    transform: scale(0.88) translateY(30px);
+    transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popup-overlay.active .popup-box {
+    transform: scale(1) translateY(0);
+}
+
+/* Full-size clickable link covers the entire popup */
+.popup-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/popup_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Subtle gold shimmer on hover */
+.popup-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(229, 193, 88, 0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+.popup-link:hover::after {
+    background: rgba(229, 193, 88, 0.06);
+}
+
+/* Close button */
+.popup-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+}
+
+.popup-close:hover {
+    background: rgba(229, 193, 88, 0.85);
+    border-color: #e5c158;
+    color: #020710;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Responsive — keep popup visible on small screens */
+@media (max-width: 768px) {
+    .popup-box {
+        width: 92vw;
+        height: 55vw;   /* preserves ~16:9 ratio */
+        min-height: 220px;
+    }
+}
