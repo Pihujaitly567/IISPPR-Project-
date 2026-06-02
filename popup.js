@@ -15,7 +15,7 @@
     window.addEventListener("load", function () {
         setTimeout(function () {
             popupOverlay.classList.add("active");
-        }, 1500);
+        }, 800);
     });
 
     // Close ONLY when the × button is clicked
