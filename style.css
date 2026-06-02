@@ -260,7 +260,7 @@ body {
 .internship-promo-section {
     width: 100%;
     padding: 100px 7%;
-    background-image: url('images/library_bg.png');
+    background-image: url('images/campus_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -274,7 +274,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(2, 7, 16, 0.80); /* 80% overlay to let warm amber tones through */
+    background: rgba(2, 7, 16, 0.85); /* 85% dark overlay */
     pointer-events: none;
     z-index: 1;
 }
