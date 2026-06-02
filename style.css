@@ -628,3 +628,150 @@ body {
     max-width:260px;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .features-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-card:nth-child(2),
+    .feature-card:nth-child(4){
+        border-right:none;
+    }
+
+    .feature-card:nth-child(3){
+        border-right:1px solid rgba(13,27,61,0.12);
+    }
+}
+
+@media(max-width:768px){
+
+    .features-header{
+        padding:65px 20px 40px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .features-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-card{
+        min-height:auto;
+        padding:40px 30px;
+        border-right:none;
+    }
+
+    .feature-card h3{
+        font-size:17px;
+        max-width:100%;
+    }
+
+    .feature-card p{
+        font-size:14px;
+        max-width:100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .menu-icon {
+        display: block !important;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(7, 26, 47, 0.98);
+        padding: 20px 0;
+        margin-top: 15px;
+        border-radius: 8px;
+        text-align: center;
+        gap: 16px;
+        list-style: none;
+    }
+    .nav-links.open {
+        display: flex !important;
+    }
+    .btn-nav {
+        display: none;
+    }
+    .hero-content {
+        padding: 30px 20px 60px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 26px;
+    }
+    .footer-section h3 {
+        font-size: 16px;
+    }
+    .footer-section ul li a {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   INTERNSHIP PROMO SECTION
+========================= */
+
+.internship-promo-section {
+    position: relative;
+    padding: 90px 5%;
+    background-image: url('images/campus_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Dark overlay so card stays readable */
+.internship-promo-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 7, 16, 0.80);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Lift card above the overlay */
+.internship-promo-section .promo-container-inline {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .internship-promo-section {
+        background-attachment: scroll; /* parallax disabled on mobile for performance */
+        padding: 60px 5%;
+    }
+}
