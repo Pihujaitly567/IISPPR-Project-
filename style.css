@@ -260,25 +260,23 @@ body {
 .internship-promo-section {
     width: 100%;
     padding: 100px 7%;
-    background: #020710;
+    background-image: url('images/campus_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
     z-index: 10;
     overflow: hidden;
 }
 
-/* Ambient premium background aura glow */
+/* Dark overlay so card stays readable */
 .internship-promo-section::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(229, 193, 88, 0.1) 0%, rgba(2, 7, 16, 0) 70%);
-    z-index: 1;
+    inset: 0;
+    background: rgba(2, 7, 16, 0.85); /* 85% dark overlay */
     pointer-events: none;
-    filter: blur(40px);
+    z-index: 1;
 }
 
 .promo-container-inline {
@@ -737,36 +735,6 @@ body {
     .footer-section ul li a {
         font-size: 14px;
     }
-}
-
-/* =========================
-   INTERNSHIP PROMO SECTION
-========================= */
-
-.internship-promo-section {
-    position: relative;
-    padding: 90px 5%;
-    background-image: url('images/campus_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-/* Dark overlay so card stays readable */
-.internship-promo-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(2, 7, 16, 0.80);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Lift card above the overlay */
-.internship-promo-section .promo-container-inline {
-    position: relative;
-    z-index: 1;
 }
 
 @media (max-width: 768px) {
