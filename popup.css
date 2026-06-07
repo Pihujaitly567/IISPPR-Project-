@@ -128,7 +128,7 @@
 }
 
 .minimized-ad-card {
-    width: 320px;
+    width: 580px;
     background: #030a16;
     border: 1px solid rgba(229, 193, 88, 0.2);
     border-radius: 12px;
@@ -153,7 +153,7 @@
 .minimized-ad-image-container {
     position: relative;
     width: 100%;
-    height: 240px; /* Gives a solid block square proportion */
+    height: 325px; /* Taller image container */
     overflow: hidden;
 }
 
@@ -190,7 +190,7 @@
 
 .minimized-ad-title-hint {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 23px; /* Slightly larger text to match broader container */
     color: #ffffff;
     font-weight: 500;
     line-height: 1.25;
@@ -243,10 +243,10 @@
         padding: 30px 20px;
     }
     .minimized-ad-card {
-        width: 280px;
+        width: 92vw; /* Broadens card on mobile/tablet to fill the width */
     }
     .minimized-ad-image-container {
-        height: 210px;
+        height: 52vw; /* Proportional height matching popup style ratio */
     }
 }
 
