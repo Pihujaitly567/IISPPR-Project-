@@ -259,7 +259,7 @@ body {
 
 .internship-promo-section {
     width: 100%;
-    padding: 100px 7%;
+    padding: 40px 7% 100px; /* Reduced top padding to close the gap */
     background-image: url('images/campus_bg.png');
     background-size: cover;
     background-position: center;

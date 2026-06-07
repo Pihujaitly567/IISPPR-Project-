@@ -117,7 +117,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 65px 7%;
+    padding: 60px 7% 15px; /* Reduced bottom padding to close gap with internship card */
     position: relative;
     z-index: 9;
     width: 100%;
