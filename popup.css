@@ -107,3 +107,132 @@
         min-height: 220px;
     }
 }
+
+/* ============================================================
+   MINIMIZED AD BANNER SECTION
+   ============================================================ */
+.minimized-ad-section {
+    display: none;
+    background: #030a16;
+    border-bottom: 1px solid rgba(229, 193, 88, 0.15);
+    padding: 16px 7%;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+}
+
+.minimized-ad-section.active {
+    display: block;
+    animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.minimized-ad-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.minimized-ad-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.minimized-ad-thumb {
+    width: 90px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(229, 193, 88, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.minimized-ad-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.minimized-ad-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #e5c158;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.minimized-ad-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0;
+}
+
+.btn-reopen {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #020710;
+    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(229, 193, 88, 0.2);
+}
+
+.btn-reopen:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(229, 193, 88, 0.35);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Minimized Ad */
+@media (max-width: 768px) {
+    .minimized-ad-section {
+        padding: 24px 20px;
+    }
+    .minimized-ad-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .minimized-ad-left {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .minimized-ad-thumb {
+        width: 120px;
+        height: 68px;
+    }
+    
+    .btn-reopen {
+        justify-content: center;
+        width: 100%;
+    }
+}
+

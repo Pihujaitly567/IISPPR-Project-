@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css?v=8" />
-    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="popup.css?v=2" />
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -115,6 +115,22 @@
       <!-- Hero Background Image -->
       <div class="hero-image"></div>
     </div>
+
+    <!-- ===================== MINIMIZED AD BANNER ===================== -->
+    <section class="minimized-ad-section" id="minimizedAdSection">
+      <div class="minimized-ad-container">
+        <div class="minimized-ad-left">
+          <img src="images/popup_banner.jpg" class="minimized-ad-thumb" alt="Special Announcement Thumbnail" />
+          <div class="minimized-ad-info">
+            <span class="minimized-ad-badge">Special Announcement</span>
+            <h4 class="minimized-ad-title">Explore IISPPRAcademy Programs & Research Opportunities</h4>
+          </div>
+        </div>
+        <button class="btn-reopen" id="reopenAdBtn">
+          <i class="ri-expand-diagonal-s-line"></i> View Announcement
+        </button>
+      </div>
+    </section>
 
     <!-- ===================== INTERNSHIP PROMO SECTION ===================== -->
     <section class="internship-promo-section">
@@ -228,7 +244,7 @@
       </div>
     </div>
 
-    <script src="popup.js"></script>
+    <script src="popup.js?v=2"></script>
 
     <script src="script.js"></script>
   </body>
