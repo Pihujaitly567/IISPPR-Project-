@@ -113,11 +113,25 @@
    ============================================================ */
 .minimized-ad-section {
     display: none;
-    background: #020710;
-    padding: 40px 7%;
+    background-image: url('images/campus_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 65px 7%;
     position: relative;
     z-index: 9;
     width: 100%;
+    overflow: hidden;
+}
+
+/* Dark overlay so card stays readable */
+.minimized-ad-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 7, 16, 0.85); /* 85% dark overlay */
+    pointer-events: none;
+    z-index: 0;
 }
 
 .minimized-ad-section.active {
@@ -128,8 +142,12 @@
 }
 
 .minimized-ad-card {
+    position: relative;
+    z-index: 1; /* Lift card above section overlay */
     width: 580px;
-    background: #030a16;
+    background: rgba(3, 10, 22, 0.75); /* Slight transparency to feel integrated */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(229, 193, 88, 0.2);
     border-radius: 12px;
     overflow: hidden;
@@ -241,6 +259,7 @@
 @media (max-width: 768px) {
     .minimized-ad-section {
         padding: 30px 20px;
+        background-attachment: scroll; /* parallax disabled on mobile for performance */
     }
     .minimized-ad-card {
         width: 92vw; /* Broadens card on mobile/tablet to fill the width */
