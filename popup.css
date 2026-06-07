@@ -109,92 +109,121 @@
 }
 
 /* ============================================================
-   MINIMIZED AD BANNER SECTION
+   MINIMIZED AD BANNER SECTION (SQUARE CARD STYLE)
    ============================================================ */
 .minimized-ad-section {
     display: none;
-    background: #030a16;
-    border-bottom: 1px solid rgba(229, 193, 88, 0.15);
-    padding: 16px 7%;
+    background: #020710;
+    padding: 40px 7%;
     position: relative;
     z-index: 9;
     width: 100%;
 }
 
 .minimized-ad-section.active {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.minimized-ad-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.minimized-ad-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.minimized-ad-thumb {
-    width: 90px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 4px;
+.minimized-ad-card {
+    width: 320px;
+    background: #030a16;
     border: 1px solid rgba(229, 193, 88, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.minimized-ad-info {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(229, 193, 88, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+}
+
+.minimized-ad-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(229, 193, 88, 0.45);
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(229, 193, 88, 0.1);
+}
+
+.minimized-ad-image-container {
+    position: relative;
+    width: 100%;
+    height: 240px; /* Gives a solid block square proportion */
+    overflow: hidden;
+}
+
+.minimized-ad-square-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.minimized-ad-card:hover .minimized-ad-square-img {
+    transform: scale(1.06);
+}
+
+.minimized-ad-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(2, 7, 16, 0.95) 0%, rgba(2, 7, 16, 0.3) 60%, rgba(2, 7, 16, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
 }
 
 .minimized-ad-badge {
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 9px;
+    font-weight: 700;
     color: #e5c158;
     letter-spacing: 2px;
     text-transform: uppercase;
+    margin-bottom: 4px;
 }
 
-.minimized-ad-title {
+.minimized-ad-title-hint {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 19px;
     color: #ffffff;
     font-weight: 500;
+    line-height: 1.25;
     margin: 0;
 }
 
-.btn-reopen {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #020710;
-    background: linear-gradient(135deg, #e5c158 0%, #ffd976 50%, #e5c158 100%);
-    border: none;
-    padding: 10px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(229, 193, 88, 0.2);
+.minimized-ad-footer {
+    padding: 12px 16px;
+    background: rgba(3, 10, 22, 0.8);
+    border-top: 1px solid rgba(229, 193, 88, 0.1);
+    text-align: center;
+    transition: background 0.3s ease;
 }
 
-.btn-reopen:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(229, 193, 88, 0.35);
+.minimized-ad-card:hover .minimized-ad-footer {
+    background: rgba(229, 193, 88, 0.08);
+}
+
+.minimized-ad-footer span {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s ease;
+}
+
+.minimized-ad-card:hover .minimized-ad-footer span {
+    color: #e5c158;
 }
 
 @keyframes slideDown {
@@ -211,28 +240,13 @@
 /* Responsive Minimized Ad */
 @media (max-width: 768px) {
     .minimized-ad-section {
-        padding: 24px 20px;
+        padding: 30px 20px;
     }
-    .minimized-ad-container {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-        gap: 16px;
+    .minimized-ad-card {
+        width: 280px;
     }
-    
-    .minimized-ad-left {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .minimized-ad-thumb {
-        width: 120px;
-        height: 68px;
-    }
-    
-    .btn-reopen {
-        justify-content: center;
-        width: 100%;
+    .minimized-ad-image-container {
+        height: 210px;
     }
 }
 

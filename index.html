@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css?v=8" />
-    <link rel="stylesheet" href="popup.css?v=2" />
+    <link rel="stylesheet" href="popup.css?v=3" />
 
     <!-- Small overrides to support 4-column pillar layout and quote section — style.css is untouched -->
     <style>
@@ -118,17 +118,17 @@
 
     <!-- ===================== MINIMIZED AD BANNER ===================== -->
     <section class="minimized-ad-section" id="minimizedAdSection">
-      <div class="minimized-ad-container">
-        <div class="minimized-ad-left">
-          <img src="images/popup_banner.jpg" class="minimized-ad-thumb" alt="Special Announcement Thumbnail" />
-          <div class="minimized-ad-info">
+      <div class="minimized-ad-card" id="reopenAdCard">
+        <div class="minimized-ad-image-container">
+          <img src="images/popup_banner.jpg" class="minimized-ad-square-img" alt="Special Announcement Thumbnail" />
+          <div class="minimized-ad-overlay">
             <span class="minimized-ad-badge">Special Announcement</span>
-            <h4 class="minimized-ad-title">Explore IISPPRAcademy Programs & Research Opportunities</h4>
+            <h5 class="minimized-ad-title-hint">Academy Program Opportunities</h5>
           </div>
         </div>
-        <button class="btn-reopen" id="reopenAdBtn">
-          <i class="ri-expand-diagonal-s-line"></i> View Announcement
-        </button>
+        <div class="minimized-ad-footer">
+          <span>View Announcement <i class="ri-arrow-right-up-line"></i></span>
+        </div>
       </div>
     </section>
 
@@ -244,7 +244,7 @@
       </div>
     </div>
 
-    <script src="popup.js?v=2"></script>
+    <script src="popup.js?v=3"></script>
 
     <script src="script.js"></script>
   </body>
